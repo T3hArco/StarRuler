@@ -18,15 +18,7 @@ public class EntityHandler
 
     public EntityHandler()
     {
-        /*for(int i = 0; i < entityIdArr.length; i++)
-        {
-            for(int j = 0; j < entityIdArr[0].length; j++)
-            {
-
-            }
-        }*/
-
-        for(int i = 0; i < 24; i++)
+        for(int i = 0; i < 34; i++)
         {
             addEntity("Star", entityList.size(), random.nextInt(18), random.nextInt(18), random.nextInt(750), random.nextInt(750), "");
         }
