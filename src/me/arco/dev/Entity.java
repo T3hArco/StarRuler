@@ -8,4 +8,35 @@ package me.arco.dev;
  */
 public class Entity
 {
+    private String type;
+    private int listID;
+    private int xpos;
+    private int ypos;
+    private int xrender;
+    private int yrender;
+
+    public Entity(String type, int listID, int xpos, int ypos, int xrender, int yrender)
+    {
+        this.type = type;
+        this.listID = listID;
+        this.xpos = xpos;
+        this.ypos = ypos;
+        this.xrender = xrender;
+        this.yrender = yrender;
+    }
+
+    public String getType()
+    {
+        return type;
+    }
+
+    public int getXrender()
+    {
+        return xrender;
+    }
+
+    public int getYrender()
+    {
+        return yrender;
+    }
 }
