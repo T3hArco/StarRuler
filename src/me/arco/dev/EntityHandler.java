@@ -16,22 +16,33 @@ public class EntityHandler
     private int[][] entityIdArr = new int[18][18];
     private Random random = new Random();
 
+    private int shipXpos, shipYpos = -1;
+
     public EntityHandler()
     {
         for(int i = 0; i < 34; i++)
         {
-            addEntity("Star", entityList.size(), random.nextInt(18), random.nextInt(18), random.nextInt(750), random.nextInt(750), "");
+            addEntity("Star", entityList.size(), random.nextInt(18), random.nextInt(18), random.nextInt(750), random.nextInt(750), "", -1);
         }
+
+        addEntity("Ship", entityList.size(), random.nextInt(18), random.nextInt(18), 500, 500, "", 1000);
     }
 
 
-    public void addEntity(String type, int listID, int xpos, int ypos, int xrender, int yrender, String image)
+    public void addEntity(String type, int listID, int xpos, int ypos, int xrender, int yrender, String image, int health)
     {
         Entity entity = null;
 
         if(type == "Star")
         {
             entity = new Star(type, listID, xpos, ypos, xrender, yrender, image);
+        }
+        else if(type == "Ship")
+        {
+            shipXpos = xpos;
+            shipYpos = ypos;
+
+            entity = new Ship(type, listID, xpos, ypos, xrender, yrender, image, health);
         }
         else
         {
@@ -55,5 +66,15 @@ public class EntityHandler
     public Entity getEntity(int xpos, int ypos)
     {
         return entityList.get(entityIdArr[xpos][ypos]);
+    }
+
+    public int getShipXpos()
+    {
+        return shipXpos;
+    }
+
+    public int getShipYpos()
+    {
+        return shipYpos;
     }
 }

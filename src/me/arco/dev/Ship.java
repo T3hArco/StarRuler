@@ -9,10 +9,12 @@ package me.arco.dev;
 public class Ship extends Entity
 {
     private String image;
+    private int health;
 
-    public Ship(String type, int listID, int xpos, int ypos, int xrender, int yrender, String image)
+    public Ship(String type, int listID, int xpos, int ypos, int xrender, int yrender, String image, int health)
     {
         super(type, listID, xpos, ypos, xrender, yrender);
         this.image = image;
+        this.health = health;
     }
 }

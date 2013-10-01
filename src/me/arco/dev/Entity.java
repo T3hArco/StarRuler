@@ -39,4 +39,14 @@ public class Entity
     {
         return yrender;
     }
+
+    public void setXrender(int xrender)
+    {
+        this.xrender = xrender;
+    }
+
+    public void setYrender(int yrender)
+    {
+        this.yrender = yrender;
+    }
 }

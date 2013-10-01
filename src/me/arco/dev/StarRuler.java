@@ -36,6 +36,11 @@ public class StarRuler extends GameWindow
         {
             starOffset--;
         }
+        else if(random.nextInt(100) == 10)
+        {
+            entityHandler.getEntity(entityHandler.getShipXpos(), entityHandler.getShipYpos()).setXrender(random.nextInt(10));
+            entityHandler.getEntity(entityHandler.getShipXpos(), entityHandler.getShipYpos()).setYrender(random.nextInt(10));
+        }
     }
 
     @Override
@@ -50,10 +55,10 @@ public class StarRuler extends GameWindow
                     renderHandle.setColor(Color.WHITE);
                     renderHandle.fillOval(entityHandler.getEntity(i, j).getXrender() + starOffset % 3, entityHandler.getEntity(i, j).getYrender() + starOffset % 3, 5, 5);
                 }
-                else if(entityHandler.getType(i, j).equals("TestObject"))
+                else if(entityHandler.getType(i, j).equals("Ship"))
                 {
                     renderHandle.setColor(new Color(random.nextFloat(), random.nextFloat(), random.nextFloat()));
-                    renderHandle.fillRect(i * 40, j * 40, 40, 40);
+                    renderHandle.fillRect(entityHandler.getEntity(i, j).getXrender() * 40, (entityHandler.getEntity(i, j).getYrender()) * 40, 40, 40);
                 }
             }
         }
