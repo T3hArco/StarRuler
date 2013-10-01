@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f56628ce-ce0a-4f73-b431-4c2bc9104277" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/Entity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/EntityHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/Star.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StarRuler.iws" />
@@ -84,7 +79,7 @@
       <file leaf-file-name="StarRuler.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/StarRuler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="29" selection-start="601" selection-end="601" vertical-scroll-proportion="0.6644951">
+            <state line="16" column="38" selection-start="391" selection-end="391" vertical-scroll-proportion="0.27687296">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -613,7 +608,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/arco/dev/StarRuler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="29" selection-start="601" selection-end="601" vertical-scroll-proportion="0.6644951">
+        <state line="16" column="38" selection-start="391" selection-end="391" vertical-scroll-proportion="0.27687296">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
