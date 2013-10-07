@@ -1,16 +1,21 @@
 package me.arco.dev;
 
 import java.awt.*;
+import java.awt.event.MouseEvent;
 import java.util.Random;
 
 public class StarRuler extends GameWindow
 {
+    private boolean debug = true;
     private Random random = new Random();
+    private long lastLoopTime = System.currentTimeMillis();
 
     private int starOffset = 0;
 
     private EntityHandler entityHandler = new EntityHandler();
     private int[][] entityIdArr = null;
+
+    private float shipHealth, shipHealthBar, shipShield, shipShieldBar;
 
     public StarRuler(String title, int width, int height)
     {
@@ -41,11 +46,31 @@ public class StarRuler extends GameWindow
             entityHandler.getEntity(entityHandler.getShipXpos(), entityHandler.getShipYpos()).setXrender(random.nextInt(10));
             entityHandler.getEntity(entityHandler.getShipXpos(), entityHandler.getShipYpos()).setYrender(random.nextInt(10));
         }
+
+        shipHealth = entityHandler.getShipHealth();
+        shipHealthBar = (int) Math.floor((shipHealth / 1000) * 80);
+
+        System.out.println(shipHealth);
+
+        shipShield = entityHandler.getShipShield();
+        shipShieldBar = (int) Math.floor((shipShield / 1000) * 80);
+
+        // debugging
+        if(debug)
+        {
+            int randomAction = random.nextInt(10);
+
+            if(randomAction == 2)
+            {
+                entityHandler.hitShip(random.nextInt(10));
+            }
+        }
     }
 
     @Override
     protected void render(Graphics2D renderHandle)
     {
+        // Rendering our elements
         for(int i = 0; i < entityIdArr.length; i++)
         {
             for(int j = 0; j < entityIdArr[0].length; j++)
@@ -62,6 +87,26 @@ public class StarRuler extends GameWindow
                 }
             }
         }
+
+        // Rendering our UI
+
+        // Rending our shield and stuff
+        renderHandle.setColor(Color.RED);
+        renderHandle.fillRect(50, 660, 80, 20);
+        renderHandle.setColor(Color.GRAY);
+        renderHandle.fillRect(50, 660, (int) shipShieldBar, 20);
+        renderHandle.setColor(Color.WHITE);
+        renderHandle.drawString("Shield: ", 5, 675);
+        renderHandle.drawString(shipShield + "", 75, 675);
+
+        // Rendering our health and stuff
+        renderHandle.setColor(Color.RED);
+        renderHandle.fillRect(50, 690, 80, 20);
+        renderHandle.setColor(new Color(0, 100, 0));
+        renderHandle.fillRect(50, 690, (int) shipHealthBar, 20);
+        renderHandle.setColor(Color.WHITE);
+        renderHandle.drawString("Health: ", 5, 705);
+        renderHandle.drawString(shipHealth + "", 75, 705);
     }
 
     @Override
@@ -76,6 +121,14 @@ public class StarRuler extends GameWindow
                     break;
             }
         }
+    }
+
+    protected void handleClickEvent(MouseEvent e)
+    {
+        int x = e.getX();
+        int y = e.getY();
+
+        System.out.println(x + ", " + y);
     }
 
 }

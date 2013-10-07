@@ -59,6 +59,8 @@ public abstract class GameWindow
                 handleKeyboardEvent(keyboardEvent);
             }
 
+
+
             update(frameTimer.stop() % 1000);
             frameTimer.set();
 
