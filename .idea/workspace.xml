@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f56628ce-ce0a-4f73-b431-4c2bc9104277" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/Human.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/Humanoid.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/ShipElement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/Ship.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/Ship.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/StarRuler.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/StarRuler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StarRuler.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381171778036" ignored="false" />
+    <file path="/Dummy.txt" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381173897781" ignored="false" />
     <file path="/fragment.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381170139568" ignored="false" />
     <file path="/AwesomeGame.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380645145600" ignored="false" />
     <file path="/Runner.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380647939858" ignored="false" />
@@ -122,7 +117,7 @@
       <file leaf-file-name="Ship.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="30" selection-start="328" selection-end="328" vertical-scroll-proportion="0.2112">
+            <state line="17" column="30" selection-start="328" selection-end="328" vertical-scroll-proportion="0.21854305">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#359#372#0" expanded="true" />
@@ -514,14 +509,18 @@
       <created>1381171789312</created>
       <updated>1381171789312</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Implemented humanoids">
+      <created>1381173900713</created>
+      <updated>1381173900713</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290735" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -535,8 +534,8 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.6932907" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30670926" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2497332" sideWeight="0.6709265" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30670926" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
@@ -581,7 +580,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented health functions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented humanoids" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -598,6 +597,7 @@
     <MESSAGE value="Test" />
     <MESSAGE value="Implemented simple starship" />
     <MESSAGE value="Implemented health functions" />
+    <MESSAGE value="Implemented humanoids" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -715,7 +715,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="30" selection-start="328" selection-end="328" vertical-scroll-proportion="0.2112">
+        <state line="17" column="30" selection-start="328" selection-end="328" vertical-scroll-proportion="0.21854305">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#359#372#0" expanded="true" />
