@@ -16,6 +16,7 @@ public class StarRuler extends GameWindow
     private int[][] entityIdArr = null;
 
     private float shipHealth, shipHealthBar, shipShield, shipShieldBar;
+    private String shipHealthBarString, shipShieldBarString;
 
     public StarRuler(String title, int width, int height)
     {
@@ -48,12 +49,16 @@ public class StarRuler extends GameWindow
         }
 
         shipHealth = entityHandler.getShipHealth();
-        shipHealthBar = (int) Math.floor((shipHealth / 1000) * 80);
+        shipHealthBar = (shipHealth / 1000) * 80;
 
-        System.out.println(shipHealth);
+        shipHealthBarString = shipHealth + "";
+        shipHealthBarString = shipHealthBarString.substring(0, shipHealthBarString.length() - 5);
 
         shipShield = entityHandler.getShipShield();
-        shipShieldBar = (int) Math.floor((shipShield / 1000) * 80);
+        shipShieldBar = (shipShield / 1000) * 80;
+
+        shipShieldBarString = shipShield + "";
+        shipShieldBarString = shipShieldBarString.substring(0, shipShieldBarString.length() - 2);
 
         // debugging
         if(debug)
@@ -97,7 +102,7 @@ public class StarRuler extends GameWindow
         renderHandle.fillRect(50, 660, (int) shipShieldBar, 20);
         renderHandle.setColor(Color.WHITE);
         renderHandle.drawString("Shield: ", 5, 675);
-        renderHandle.drawString(shipShield + "", 75, 675);
+        renderHandle.drawString(shipShieldBarString + "", 80, 675);
 
         // Rendering our health and stuff
         renderHandle.setColor(Color.RED);
@@ -106,7 +111,7 @@ public class StarRuler extends GameWindow
         renderHandle.fillRect(50, 690, (int) shipHealthBar, 20);
         renderHandle.setColor(Color.WHITE);
         renderHandle.drawString("Health: ", 5, 705);
-        renderHandle.drawString(shipHealth + "", 75, 705);
+        renderHandle.drawString(shipHealthBarString + "", 80, 705);
     }
 
     @Override

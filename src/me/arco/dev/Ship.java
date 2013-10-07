@@ -1,5 +1,8 @@
 package me.arco.dev;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Arco
@@ -12,6 +15,7 @@ public class Ship extends Entity
     private float health;
     private float shield;
     private boolean dead;
+    private List<ShipElement> shipElementList = new ArrayList<ShipElement>();
 
     public Ship(String type, int listID, int xpos, int ypos, int xrender, int yrender, String image, int health, int shield)
     {
