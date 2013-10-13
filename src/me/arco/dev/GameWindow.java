@@ -7,6 +7,7 @@ import java.awt.Graphics2D;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
+import java.awt.event.MouseEvent;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -18,6 +19,7 @@ public abstract class GameWindow
     private JPanel renderingPanel;
     private BufferedImage frameBuffer;
     private KeyboardEventManager keyboardEventManager;
+    private MouseEventManager mouseEventManager;
 
     protected int width;
     protected int height;
@@ -37,6 +39,9 @@ public abstract class GameWindow
 
         keyboardEventManager = new KeyboardEventManager();
         frame.addKeyListener(keyboardEventManager);
+
+        mouseEventManager = new MouseEventManager();
+        frame.addMouseListener(mouseEventManager);
 
         frameBuffer = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 
@@ -113,4 +118,5 @@ public abstract class GameWindow
 
     protected abstract void handleKeyboardEvent(KeyboardEvent event);
 
+    protected abstract void handleMouseEvent(MouseEvent event);
 }

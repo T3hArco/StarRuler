@@ -128,12 +128,10 @@ public class StarRuler extends GameWindow
         }
     }
 
-    protected void handleClickEvent(MouseEvent e)
+    @Override
+    protected void handleMouseEvent(MouseEvent event)
     {
-        int x = e.getX();
-        int y = e.getY();
-
-        System.out.println(x + ", " + y);
+        System.out.println(event.getX());
     }
 
 }
