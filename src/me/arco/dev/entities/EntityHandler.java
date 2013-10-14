@@ -1,4 +1,7 @@
-package me.arco.dev;
+package me.arco.dev.entities;
+
+import me.arco.dev.entities.background.Star;
+import me.arco.dev.entities.ship.Ship;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,7 +13,13 @@ import java.util.Random;
  * Date: 1/10/13
  * Time: 18:42
  */
+
 public class EntityHandler
+{
+
+}
+
+/*public class EntityHandler
 {
     private List<Entity> entityList = new ArrayList<Entity>();
     private int[][] entityIdArr = new int[18][18];
@@ -117,4 +126,4 @@ public class EntityHandler
             ship.setDead(true);
         }
     }
-}
+}          */

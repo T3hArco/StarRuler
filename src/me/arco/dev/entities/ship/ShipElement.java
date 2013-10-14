@@ -1,4 +1,6 @@
-package me.arco.dev;
+package me.arco.dev.entities.ship;
+
+import me.arco.dev.entities.living.Humanoid;
 
 import java.util.ArrayList;
 import java.util.List;

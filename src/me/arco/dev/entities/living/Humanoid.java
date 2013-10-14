@@ -1,4 +1,4 @@
-package me.arco.dev;
+package me.arco.dev.entities.living;
 
 /**
  * Created with IntelliJ IDEA.

@@ -47,6 +47,7 @@ public abstract class GameWindow
 
         frame.pack();
         frame.setVisible(true);
+        frame.setResizable(false);
     }
 
     public void run()
