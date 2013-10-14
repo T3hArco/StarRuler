@@ -15,6 +15,7 @@ public class StarRuler extends GameWindow
     private Random random = new Random();
     private List<Entity> entities = new ArrayList<Entity>();
     private Entity entity;
+    private float shipHealth, shipShield;
 
     public StarRuler(String title, int width, int height)
     {
@@ -43,6 +44,12 @@ public class StarRuler extends GameWindow
             {
                 entity.update(1);
             }
+            else if(entity.getType().equals("Ship"))
+            {
+                Ship ship = (Ship) entity;
+                shipHealth = ship.getHealth();
+                shipShield = ship.getShield();
+            }
         }
     }
 
@@ -57,22 +64,22 @@ public class StarRuler extends GameWindow
         // Rendering our UI
 
         // Rending our shield and stuff
-        /*renderHandle.setColor(Color.RED);
+        renderHandle.setColor(Color.RED);
         renderHandle.fillRect(50, 660, 80, 20);
         renderHandle.setColor(Color.GRAY);
-        renderHandle.fillRect(50, 660, (int) shipShieldBar, 20);
+        renderHandle.fillRect(50, 660, (int) shipShield, 20);
         renderHandle.setColor(Color.WHITE);
         renderHandle.drawString("Shield: ", 5, 675);
-        renderHandle.drawString(shipShieldBarString + "", 80, 675);*/
+        renderHandle.drawString(shipShield + "", 80, 675);
 
         // Rendering our health and stuff
-        /*renderHandle.setColor(Color.RED);
+        renderHandle.setColor(Color.RED);
         renderHandle.fillRect(50, 690, 80, 20);
         renderHandle.setColor(new Color(0, 100, 0));
-        renderHandle.fillRect(50, 690, (int) shipHealthBar, 20);
+        renderHandle.fillRect(50, 690, (int) shipShield, 20);
         renderHandle.setColor(Color.WHITE);
         renderHandle.drawString("Health: ", 5, 705);
-        renderHandle.drawString(shipHealthBarString + "", 80, 705);*/
+        renderHandle.drawString(shipShield + "", 80, 705);
     }
 
     @Override

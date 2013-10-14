@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f56628ce-ce0a-4f73-b431-4c2bc9104277" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/GameWindow.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/GameWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/Runner.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/Runner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/background/Star.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/background/Star.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/StarRuler.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/StarRuler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\Entity.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java" />
-      <change type="MOVED" beforePath="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\EntityHandler.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/EntityHandler.java" />
-      <change type="MOVED" beforePath="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\Human.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/living/Human.java" />
-      <change type="MOVED" beforePath="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\Humanoid.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/living/Humanoid.java" />
-      <change type="MOVED" beforePath="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\Ship.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" />
-      <change type="MOVED" beforePath="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\ShipElement.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/ShipElement.java" />
-      <change type="MOVED" beforePath="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\Star.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/background/Star.java" />
     </list>
     <ignored path="StarRuler.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381771021126" ignored="false" />
+    <file path="/Dummy.txt" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381775957968" ignored="false" />
     <file path="/fragment.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381773643979" ignored="false" />
     <file path="/AwesomeGame.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380645145600" ignored="false" />
     <file path="/Runner.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380647939858" ignored="false" />
@@ -24,10 +17,10 @@
     <file path="/KeyboardEventManager.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380645180624" ignored="false" />
     <file path="/KeyboardEvent.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380645182057" ignored="false" />
     <file path="/GameWindow.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381771213166" ignored="false" />
-    <file path="/StarRuler.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381775372684" ignored="false" />
+    <file path="/StarRuler.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381777358395" ignored="false" />
     <file path="/EntityHandler.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381772498595" ignored="false" />
     <file path="/Entity.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381775339660" ignored="false" />
-    <file path="/Star.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381775392408" ignored="false" />
+    <file path="/Star.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381776569669" ignored="false" />
     <file path="/Ship.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381775904402" ignored="false" />
     <file path="/KlickEvent.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380736440876" ignored="false" />
     <file path="/ShipElement.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381173691460" ignored="false" />
@@ -112,10 +105,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StarRuler.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="StarRuler.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/StarRuler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="57" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
+            <state line="86" column="62" selection-start="2454" selection-end="2454" vertical-scroll-proportion="1.5235008">
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#408#416#0" expanded="true" />
@@ -124,10 +117,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ship.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Ship.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="57" selection-start="441" selection-end="441" vertical-scroll-proportion="0.5235008">
+            <state line="42" column="35" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -138,7 +131,7 @@
       <file leaf-file-name="Star.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/background/Star.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="203" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
+            <state line="8" column="32" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,10 +169,10 @@
         <option value="$PROJECT_DIR$/src/example/TestEntity.java" />
         <option value="$PROJECT_DIR$/src/example/Entity.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/entities/EntityHandler.java" />
-        <option value="$PROJECT_DIR$/src/me/arco/dev/StarRuler.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/entities/background/Star.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" />
+        <option value="$PROJECT_DIR$/src/me/arco/dev/StarRuler.java" />
       </list>
     </option>
   </component>
@@ -576,7 +569,11 @@
       <created>1381654894525</created>
       <updated>1381654894525</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Everything was redone">
+      <created>1381775971324</created>
+      <updated>1381775971324</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -643,7 +640,7 @@
     <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented mouseevents" />
+    <option name="LAST_COMMIT_MESSAGE" value="Everything was redone" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -662,6 +659,7 @@
     <MESSAGE value="Implemented health functions" />
     <MESSAGE value="Implemented humanoids" />
     <MESSAGE value="Implemented mouseevents" />
+    <MESSAGE value="Everything was redone" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -729,6 +727,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/EntityHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="1" selection-start="313" selection-end="313" vertical-scroll-proportion="0.44084278">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_10/src.zip!/java/util/Random.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="6" selection-start="2113" selection-end="2113" vertical-scroll-proportion="0.33225283">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/background/Star.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="32" selection-start="166" selection-end="166" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="35" selection-start="826" selection-end="826" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Runner.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="74" selection-start="199" selection-end="199" vertical-scroll-proportion="0.0">
@@ -743,44 +773,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/EntityHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="1" selection-start="313" selection-end="313" vertical-scroll-proportion="0.44084278">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/arco/dev/StarRuler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="57" selection-start="711" selection-end="711" vertical-scroll-proportion="0.0">
+        <state line="86" column="62" selection-start="2454" selection-end="2454" vertical-scroll-proportion="1.5235008">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#408#416#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/background/Star.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="203" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_10/src.zip!/java/util/Random.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="68" column="6" selection-start="2113" selection-end="2113" vertical-scroll-proportion="0.33225283">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="57" selection-start="441" selection-end="441" vertical-scroll-proportion="0.5235008">
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

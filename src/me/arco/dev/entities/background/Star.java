@@ -14,7 +14,6 @@ public class Star extends Entity
         this.motionX = 1;
     }
 
-
     @Override
     public void draw(Graphics2D g)
     {
