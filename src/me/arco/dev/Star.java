@@ -1,4 +1,4 @@
-package me.arco.dev.entities.background;
+package me.arco.dev;
 
 import me.arco.dev.entities.Entity;
 

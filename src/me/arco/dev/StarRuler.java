@@ -1,11 +1,14 @@
 package me.arco.dev;
 
 import me.arco.dev.entities.Entity;
-import me.arco.dev.entities.background.Star;
 import me.arco.dev.entities.ship.Ship;
+import me.arco.dev.items.Inventory;
+import me.arco.dev.items.Item;
+import me.arco.dev.ui.*;
+import me.arco.dev.ui.Button;
 
 import java.awt.*;
-import java.awt.event.MouseEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -14,8 +17,11 @@ public class StarRuler extends GameWindow
 {
     private Random random = new Random();
     private List<Entity> entities = new ArrayList<Entity>();
+    private List<UI> uiElements = new ArrayList<UI>();
     private Entity entity;
+    private UI ui, button;
     private float shipHealth, shipShield;
+    private Inventory inventory;
 
     public StarRuler(String title, int width, int height)
     {
@@ -25,6 +31,8 @@ public class StarRuler extends GameWindow
     @Override
     protected void initialize()
     {
+        inventory = new Inventory();
+
         for(int i = 0; i < 50; i++)
         {
             entity = new Star(random.nextInt(650), random.nextInt(650), 100, 100, "Star");
@@ -33,6 +41,14 @@ public class StarRuler extends GameWindow
 
         entity = new Ship(250, 250, 100, 100, "Ship");
         entities.add(entity);
+
+        ui = new Hud();
+        button = new Button("herpes");
+        uiElements.add(ui);
+        uiElements.add(button);
+
+        inventory.addItem(0);
+        inventory.addItem(10);
     }
 
     @Override
@@ -62,24 +78,16 @@ public class StarRuler extends GameWindow
         }
 
         // Rendering our UI
+        for(UI ui : uiElements)
+        {
+            ui.draw(renderHandle, shipShield, shipHealth, null);
+        }
 
-        // Rending our shield and stuff
-        renderHandle.setColor(Color.RED);
-        renderHandle.fillRect(50, 660, 80, 20);
-        renderHandle.setColor(Color.GRAY);
-        renderHandle.fillRect(50, 660, (int) shipShield, 20);
-        renderHandle.setColor(Color.WHITE);
-        renderHandle.drawString("Shield: ", 5, 675);
-        renderHandle.drawString(shipShield + "", 80, 675);
-
-        // Rendering our health and stuff
-        renderHandle.setColor(Color.RED);
-        renderHandle.fillRect(50, 690, 80, 20);
-        renderHandle.setColor(new Color(0, 100, 0));
-        renderHandle.fillRect(50, 690, (int) shipShield, 20);
-        renderHandle.setColor(Color.WHITE);
-        renderHandle.drawString("Health: ", 5, 705);
-        renderHandle.drawString(shipShield + "", 80, 705);
+        // TEST: inventory items
+        for(Item item : inventory.getItemList())
+        {
+            item.draw(renderHandle, random.nextInt(100), random.nextInt(100));
+        }
     }
 
     @Override
@@ -97,9 +105,9 @@ public class StarRuler extends GameWindow
     }
 
     @Override
-    protected void handleMouseEvent(MouseEvent event)
+    protected void handleMouseEvent(MouseEvent e)
     {
-        System.out.println(event.getX());
+        System.out.println(e);
     }
 
 }

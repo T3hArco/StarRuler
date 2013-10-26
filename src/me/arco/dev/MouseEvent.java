@@ -8,13 +8,19 @@ package me.arco.dev;
  */
 public class MouseEvent
 {
-    private int x;
-    private int y;
+    public static enum Type
+    {
+        CLICKED, PRESSED, RELEASED
+    }
 
-    public MouseEvent(int x, int y)
+    private int x, y;
+    private Type type;
+
+    public MouseEvent(int x, int y, Type type)
     {
         this.x = x;
         this.y = y;
+        this.type = type;
     }
 
     public int getX()
@@ -25,5 +31,20 @@ public class MouseEvent
     public int getY()
     {
         return y;
+    }
+
+    public Type getType()
+    {
+        return type;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "MouseEvent{" +
+                "x=" + x +
+                ", y=" + y +
+                ", type=" + type +
+                '}';
     }
 }

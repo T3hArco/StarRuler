@@ -7,7 +7,7 @@ import java.awt.Graphics2D;
 import java.awt.Toolkit;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
-import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -42,6 +42,7 @@ public abstract class GameWindow
 
         mouseEventManager = new MouseEventManager();
         frame.addMouseListener(mouseEventManager);
+        frame.addMouseMotionListener(mouseEventManager);
 
         frameBuffer = new BufferedImage(width, height, BufferedImage.TYPE_INT_ARGB);
 
@@ -63,6 +64,12 @@ public abstract class GameWindow
             {
                 KeyboardEvent keyboardEvent = keyboardEventManager.getNextKeyboardEvent();
                 handleKeyboardEvent(keyboardEvent);
+            }
+
+            while (mouseEventManager.hasMouseEvents())
+            {
+                MouseEvent mouseEvent = mouseEventManager.getNextMouseEvent();
+                handleMouseEvent(mouseEvent);
             }
 
 

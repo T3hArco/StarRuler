@@ -3,7 +3,8 @@ package me.arco.dev.entities.ship;
 import me.arco.dev.entities.Entity;
 
 import java.awt.*;
-import java.util.Random;
+import java.util.*;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -16,6 +17,7 @@ public class Ship extends Entity
     private long timePassed = 0;
     private Random random = new Random();
     private float health, shield = health = 1000;
+    private List<ShipElement> shipElements = new ArrayList<ShipElement>();
 
     public Ship(float x, float y, float motionX, float motionY, String type)
     {

@@ -16,7 +16,7 @@ public class ShipElement
     private String type;
     private int xOffset, yOffset;
     private int level;
-    private List<Humanoid> humanoidList = new ArrayList<Humanoid>();
+    private List<Humanoid> humanoids = new ArrayList<Humanoid>();
 
     public ShipElement(String type, int xOffset, int yOffset, int level)
     {
@@ -24,5 +24,10 @@ public class ShipElement
         this.xOffset = xOffset;
         this.yOffset = yOffset;
         this.level = level;
+    }
+
+    public void addHumanoid(Humanoid h)
+    {
+        humanoids.add(h);
     }
 }
