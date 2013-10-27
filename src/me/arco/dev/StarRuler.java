@@ -1,14 +1,13 @@
 package me.arco.dev;
 
 import me.arco.dev.entities.Entity;
+import me.arco.dev.entities.Star;
 import me.arco.dev.entities.ship.Ship;
 import me.arco.dev.items.Inventory;
-import me.arco.dev.items.Item;
 import me.arco.dev.ui.*;
 import me.arco.dev.ui.Button;
 
 import java.awt.*;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -22,6 +21,7 @@ public class StarRuler extends GameWindow
     private UI ui, button;
     private float shipHealth, shipShield;
     private Inventory inventory;
+    private boolean renderInventory = false;
 
     public StarRuler(String title, int width, int height)
     {
@@ -43,12 +43,16 @@ public class StarRuler extends GameWindow
         entities.add(entity);
 
         ui = new Hud();
-        button = new Button("herpes");
+        button = new Button("Buttontest");
         uiElements.add(ui);
         uiElements.add(button);
 
         inventory.addItem(0);
-        inventory.addItem(10);
+        inventory.addItem(1);
+        inventory.addItem(3);
+        inventory.addItem(4);
+        inventory.addItem(5);
+        inventory.addItem(6);
     }
 
     @Override
@@ -67,27 +71,20 @@ public class StarRuler extends GameWindow
                 shipShield = ship.getShield();
             }
         }
+
     }
 
     @Override
     protected void render(Graphics2D renderHandle)
     {
-        for(Entity entity : entities)
-        {
-            entity.draw(renderHandle);
-        }
+        // Render all the entities
+        for(Entity entity : entities) entity.draw(renderHandle);
 
         // Rendering our UI
-        for(UI ui : uiElements)
-        {
-            ui.draw(renderHandle, shipShield, shipHealth, null);
-        }
+        for(UI ui : uiElements) ui.draw(renderHandle, shipShield, shipHealth, null);
 
-        // TEST: inventory items
-        for(Item item : inventory.getItemList())
-        {
-            item.draw(renderHandle, random.nextInt(100), random.nextInt(100));
-        }
+        // Rendering inventory if true
+        if(renderInventory) inventory.draw(renderHandle);
     }
 
     @Override
@@ -99,6 +96,10 @@ public class StarRuler extends GameWindow
             {
                 case KeyboardEvent.KEY_ESCAPE:
                     shutdown();
+                    break;
+
+                case KeyboardEvent.KEY_I:
+                    renderInventory ^= true; // fancy xor!
                     break;
             }
         }

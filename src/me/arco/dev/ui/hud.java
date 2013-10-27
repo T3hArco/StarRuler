@@ -14,7 +14,7 @@ public class Hud extends UI
     @Override
     public void draw(Graphics2D g, double shipShield, double shipHealth, String arg3)
     {
-        g.setColor(Color.RED);
+        g.setColor(new Color(1f, 0f, 0f, .5f));
         g.fillRect(50, 660, 80, 20);
         g.setColor(Color.GRAY);
         g.fillRect(50, 660, (int) shipShield, 20);
@@ -23,7 +23,7 @@ public class Hud extends UI
         g.drawString(shipShield + "", 80, 675);
 
         // Rendering our health and stuff
-        g.setColor(Color.RED);
+        g.setColor(new Color(1f, 0f, 0f, .5f));
         g.fillRect(50, 690, 80, 20);
         g.setColor(new Color(0, 100, 0));
         g.fillRect(50, 690, (int) shipHealth, 20);

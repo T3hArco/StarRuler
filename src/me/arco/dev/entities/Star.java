@@ -1,8 +1,7 @@
-package me.arco.dev;
-
-import me.arco.dev.entities.Entity;
+package me.arco.dev.entities;
 
 import java.awt.*;
+import java.util.Random;
 
 public class Star extends Entity
 {
@@ -25,7 +24,8 @@ public class Star extends Entity
     public void update(long delta)
     {
         timePassed += delta;
-        if(timePassed > 10000) {
+        if (timePassed > 10000)
+        {
             timePassed = 0;
             motionX *= -1;
         }

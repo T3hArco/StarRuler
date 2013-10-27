@@ -17,7 +17,7 @@ public class Item
 {
     public static enum Type
     {
-        HEALING, DAMAGING, REPRODUCING, UPGRADE_WEAPON, UPGRADE_SHIELD
+        HEALING, DAMAGING, REPRODUCING, UPGRADE_WEAPON, UPGRADE_SHIELD, UPGRADE_HEALTH, UPGRADE_POPULATION
     }
 
     private String name;
@@ -71,7 +71,7 @@ public class Item
     public void draw(Graphics2D g, float xPos, float yPos)
     {
         g.setColor(Color.WHITE);
-        g.drawRect((int) xPos, (int) yPos, 50, 20);
+        g.drawRect((int) xPos-2, (int) yPos-1, 50, 50);
         g.drawImage(image, (int) xPos, (int) yPos, null);
     }
 

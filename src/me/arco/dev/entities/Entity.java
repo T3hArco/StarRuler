@@ -1,6 +1,7 @@
 package me.arco.dev.entities;
 
 import java.awt.*;
+import java.util.Random;
 
 /**
  * Created with IntelliJ IDEA.
@@ -26,9 +27,20 @@ public abstract class Entity
 
     public abstract void draw(Graphics2D g);
 
-    public void update(long delta) {
-        x += motionX * delta * 0.0001f;
-        y += motionY * delta * 0.0001f;
+    public void update(long delta)
+    {
+        Random random = new Random();
+
+        if(random.nextBoolean())
+        {
+            x += motionX * delta * 0.0001f;
+            y += motionY * delta * 0.0001f;
+        }
+        else
+        {
+            x -= motionX * delta * 0.0001f;
+            y -= motionY * delta * 0.0001f;
+        }
     }
 
     public String getType()

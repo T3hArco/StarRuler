@@ -56,7 +56,8 @@ public class Ship extends Entity
     public void update(long delta)
     {
         timePassed += delta;
-        if(timePassed > 10000) {
+        if (timePassed > 10000)
+        {
             timePassed = 0;
             motionX *= -1;
         }
