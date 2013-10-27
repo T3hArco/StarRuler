@@ -21,7 +21,7 @@ public class StarRuler extends GameWindow
     private UI ui, button;
     private float shipHealth, shipShield;
     private Inventory inventory;
-    private boolean renderInventory = false;
+    private boolean renderInventory, renderHud;
 
     public StarRuler(String title, int width, int height)
     {
@@ -81,10 +81,10 @@ public class StarRuler extends GameWindow
         for(Entity entity : entities) entity.draw(renderHandle);
 
         // Rendering our UI
-        for(UI ui : uiElements) ui.draw(renderHandle, shipShield, shipHealth, null);
+        if(!renderHud) for(UI ui : uiElements) ui.draw(renderHandle, shipShield, shipHealth, null);
 
         // Rendering inventory if true
-        if(renderInventory) inventory.draw(renderHandle);
+        if(!renderInventory) inventory.draw(renderHandle);
     }
 
     @Override
@@ -100,6 +100,10 @@ public class StarRuler extends GameWindow
 
                 case KeyboardEvent.KEY_I:
                     renderInventory ^= true; // fancy xor!
+                    break;
+
+                case KeyboardEvent.KEY_H:
+                    renderHud ^= true; // more fanciness!
                     break;
             }
         }

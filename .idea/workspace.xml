@@ -2,28 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f56628ce-ce0a-4f73-b431-4c2bc9104277" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/items/images/heart.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/items/images/person.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/icon.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/GameWindow.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/GameWindow.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/items/Inventory.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/items/Inventory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/items/Item.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/items/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/Runner.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/Runner.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/StarRuler.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/StarRuler.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/ui/UI.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/ui/UI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\Star.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/Star.java" />
       <change type="MOVED" beforePath="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\ui\hud.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/ui/Hud.java" />
     </list>
     <ignored path="StarRuler.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382871432634" ignored="false" />
+    <file path="/Dummy.txt" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382896215848" ignored="false" />
     <file path="/fragment.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382801910010" ignored="false" />
     <file path="/AwesomeGame.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380645145600" ignored="false" />
     <file path="/Runner.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380647939858" ignored="false" />
     <file path="/Timer.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380645175538" ignored="false" />
     <file path="/KeyboardEventManager.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380645180624" ignored="false" />
     <file path="/KeyboardEvent.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380645182057" ignored="false" />
-    <file path="/GameWindow.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382254857954" ignored="false" />
-    <file path="/StarRuler.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382875222582" ignored="false" />
+    <file path="/GameWindow.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382903365842" ignored="false" />
+    <file path="/StarRuler.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382901936898" ignored="false" />
     <file path="/EntityHandler.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381772498595" ignored="false" />
     <file path="/Entity.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382874475809" ignored="false" />
     <file path="/Star.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382874287174" ignored="false" />
@@ -34,12 +33,12 @@
     <file path="/MouseEvent.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382255094304" ignored="false" />
     <file path="/MouseEventManager.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382255086148" ignored="false" />
     <file path="/TestEntity.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381772062951" ignored="false" />
-    <file path="/Hud.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382255636707" ignored="false" />
+    <file path="/Hud.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382901620861" ignored="false" />
     <file path="/UIHandler.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381857677898" ignored="false" />
     <file path="/Button.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382797867483" ignored="false" />
     <file path="/UI.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382255613933" ignored="false" />
     <file path="/Item.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382875165648" ignored="false" />
-    <file path="/Inventory.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382875357629" ignored="false" />
+    <file path="/Inventory.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382876838465" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +103,16 @@
       <file leaf-file-name="StarRuler.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/StarRuler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="54" column="29" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0">
+            <state line="14" column="36" selection-start="355" selection-end="355" vertical-scroll-proportion="-2.72">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UI.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/ui/UI.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="14" column="27" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -113,16 +121,16 @@
       <file leaf-file-name="Inventory.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/items/Inventory.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="86" column="30" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0">
+            <state line="95" column="22" selection-start="2187" selection-end="2701" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ship.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Ship.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="45" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.3406408">
+            <state line="36" column="92" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -131,10 +139,8 @@
       <file leaf-file-name="Item.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/items/Item.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="88" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="53" column="5" selection-start="1355" selection-end="1355" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -143,9 +149,7 @@
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/Star.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="24" column="5" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -154,9 +158,7 @@
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
             <state line="41" column="15" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -164,25 +166,16 @@
       <file leaf-file-name="Hud.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/ui/Hud.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="26" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0">
+            <state line="33" column="50" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Button.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/ui/Button.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="18" column="0" selection-start="259" selection-end="512" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameWindow.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GameWindow.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/GameWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="120" column="40" selection-start="3354" selection-end="3354" vertical-scroll-proportion="0.0">
+            <state line="21" column="67" selection-start="582" selection-end="582" vertical-scroll-proportion="0.34343433">
               <folding />
             </state>
           </provider>
@@ -191,7 +184,7 @@
       <file leaf-file-name="Runner.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="21" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
+            <state line="7" column="42" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -220,17 +213,17 @@
         <option value="$PROJECT_DIR$/src/me/arco/dev/KeyboardEventManager.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/MouseEventManager.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/MouseEvent.java" />
-        <option value="$PROJECT_DIR$/src/me/arco/dev/ui/UI.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/ui/Button.java" />
-        <option value="$PROJECT_DIR$/src/me/arco/dev/Runner.java" />
-        <option value="$PROJECT_DIR$/src/me/arco/dev/GameWindow.java" />
-        <option value="$PROJECT_DIR$/src/me/arco/dev/ui/Hud.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/entities/living/Star.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/entities/Star.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/items/Item.java" />
-        <option value="$PROJECT_DIR$/src/me/arco/dev/StarRuler.java" />
+        <option value="$PROJECT_DIR$/src/me/arco/dev/ui/UI.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/items/Inventory.java" />
+        <option value="$PROJECT_DIR$/src/me/arco/dev/ui/Hud.java" />
+        <option value="$PROJECT_DIR$/src/me/arco/dev/Runner.java" />
+        <option value="$PROJECT_DIR$/src/me/arco/dev/StarRuler.java" />
+        <option value="$PROJECT_DIR$/src/me/arco/dev/GameWindow.java" />
       </list>
     </option>
   </component>
@@ -271,8 +264,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -469,6 +460,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -483,8 +476,8 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="dynamic.classpath" value="false" />
   </component>
@@ -493,6 +486,7 @@
       <recent name="me.arco.dev" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev" />
       <recent name="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\items\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -539,6 +533,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -565,19 +572,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -698,7 +692,11 @@
       <created>1382802229079</created>
       <updated>1382802229079</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added inventory">
+      <created>1382875573206</created>
+      <updated>1382875573206</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -708,6 +706,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32800853" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41214058" sideWeight="0.99910396" order="7" side_tool="false" content_ui="tabs" />
@@ -723,11 +722,10 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1670224" sideWeight="0.65921193" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34078807" sideWeight="0.99946266" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1670224" sideWeight="0.6602769" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3397231" sideWeight="0.99946266" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.5" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
@@ -774,7 +772,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added tajizzle power and inventories" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added inventory" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -796,6 +794,7 @@
     <MESSAGE value="Implemented mouseevents" />
     <MESSAGE value="Everything was redone" />
     <MESSAGE value="Added tajizzle power and inventories" />
+    <MESSAGE value="Added inventory" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -826,30 +825,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/ui/UI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="76" selection-start="234" selection-end="234" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_10/src.zip!/javax/imageio/ImageIO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1300" column="0" selection-start="45883" selection-end="45883" vertical-scroll-proportion="0.33277026">
-          <folding />
-        </state>
+        <state line="1300" column="0" selection-start="45883" selection-end="45883" vertical-scroll-proportion="0.33277026" />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_10/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="185" column="0" selection-start="6161" selection-end="6161" vertical-scroll-proportion="0.33277026" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="21" selection-start="186" selection-end="186" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/arco/dev/ui/Button.java">
@@ -859,16 +842,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/GameWindow.java">
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/items/Inventory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="120" column="40" selection-start="3354" selection-end="3354" vertical-scroll-proportion="0.0">
+        <state line="95" column="22" selection-start="2187" selection-end="2701" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/ui/Hud.java">
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="26" selection-start="586" selection-end="586" vertical-scroll-proportion="0.0">
+        <state line="36" column="92" selection-start="769" selection-end="769" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/items/Item.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="5" selection-start="1355" selection-end="1355" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/Star.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="5" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -876,47 +873,41 @@
     <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="41" column="15" selection-start="859" selection-end="859" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/ui/Hud.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="50" selection-start="1124" selection-end="1124" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/ui/UI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="27" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="42" selection-start="136" selection-end="136" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/arco/dev/StarRuler.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="54" column="29" selection-start="1469" selection-end="1469" vertical-scroll-proportion="0.0">
+        <state line="14" column="36" selection-start="355" selection-end="355" vertical-scroll-proportion="-2.72">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/items/Item.java">
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/GameWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="88" selection-start="393" selection-end="393" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/Star.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="5" selection-start="499" selection-end="499" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/items/Inventory.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="86" column="30" selection-start="2510" selection-end="2510" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="45" selection-start="1028" selection-end="1028" vertical-scroll-proportion="0.3406408">
+        <state line="21" column="67" selection-start="582" selection-end="582" vertical-scroll-proportion="0.34343433">
           <folding />
         </state>
       </provider>

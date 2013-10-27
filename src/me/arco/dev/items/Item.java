@@ -53,21 +53,6 @@ public class Item
         }
     }
 
-    public String getName()
-    {
-        return name;
-    }
-
-    public int getAmount()
-    {
-        return amount;
-    }
-
-    public String getImagePath()
-    {
-        return imagePath;
-    }
-
     public void draw(Graphics2D g, float xPos, float yPos)
     {
         g.setColor(Color.WHITE);

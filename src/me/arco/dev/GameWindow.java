@@ -9,8 +9,7 @@ import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.*;
 
 public abstract class GameWindow
 {
@@ -20,6 +19,7 @@ public abstract class GameWindow
     private BufferedImage frameBuffer;
     private KeyboardEventManager keyboardEventManager;
     private MouseEventManager mouseEventManager;
+    private ImageIcon imageIcon = new ImageIcon("./src/me/arco/dev/icon.png");
 
     protected int width;
     protected int height;
@@ -33,6 +33,7 @@ public abstract class GameWindow
         frame = new JFrame(title);
         frame.setPreferredSize(new Dimension(width, height));
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setIconImage(imageIcon.getImage());
 
         renderingPanel = new JPanel();
         frame.add(renderingPanel);

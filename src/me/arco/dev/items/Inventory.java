@@ -22,6 +22,8 @@ public class Inventory
 
     public void addItem(int id)
     {
+        // TODO refactor this in another function that returns items
+
         switch(id)
         {
             case 0:
@@ -71,13 +73,13 @@ public class Inventory
     public void draw(Graphics2D g)
     {
         int xOffset = 480;
-        int yOffset = 20;
+        int yOffset = 590;
         int count = 0;
 
         g.setColor(Color.WHITE);
-        g.drawRect(470, 10, 250, 150);
+        g.drawRect(470, 580, 250, 128);
         g.setColor(new Color(1f, 0f, 0f, .5f));
-        g.fillRect(470, 10, 251, 151);
+        g.fillRect(470, 580, 251, 129);
 
         for(Item item : itemList)
         {
