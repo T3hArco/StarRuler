@@ -5,7 +5,7 @@ public class Runner
 
     public static void main(String[] args)
     {
-        GameWindow starRuler = new StarRuler("StarFighter (I couldn't find a lamer name)", 735, 745);
+        GameWindow starRuler = new Snoipa("Snoipa", 735, 745);
         starRuler.run();
     }
 

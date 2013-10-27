@@ -18,6 +18,7 @@ public class Ship extends Entity
     private Random random = new Random();
     private float health, shield = health = 1000;
     private List<ShipElement> shipElements = new ArrayList<ShipElement>();
+    private boolean dead = false;
 
     public Ship(float x, float y, float motionX, float motionY, String type)
     {
@@ -25,24 +26,42 @@ public class Ship extends Entity
         this.motionX = 1;
     }
 
-    public String healthToString()
-    {
-        return health + "";
-    }
-
-    public String shieldToString()
-    {
-        return shield + "";
-    }
-
     public float getHealth()
     {
-        return (health / 1000) * 50;
+        return (health / 1000) * 187;
     }
 
     public float getShield()
     {
-        return (shield / 1000) * 50;
+        return (shield / 1000) * 187;
+    }
+
+    public void hit(double force)
+    {
+        if(shield <= 0)
+        {
+            health -= random.nextInt(15) * (force / 3);
+            shield = 0;
+        }
+        else
+        {
+            shield -= random.nextInt(15) / (force / 2);
+            if(random.nextBoolean())
+            {
+                health -= random.nextInt(15) / (force / 4);
+            }
+        }
+
+        if(health <= 0)
+        {
+            dead = true;
+            health = 0;
+        }
+    }
+
+    public boolean checkIfDead()
+    {
+        return dead;
     }
 
     @Override

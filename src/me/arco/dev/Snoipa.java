@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class StarRuler extends GameWindow
+public class Snoipa extends GameWindow
 {
     private Random random = new Random();
     private List<Entity> entities = new ArrayList<Entity>();
@@ -21,9 +21,9 @@ public class StarRuler extends GameWindow
     private UI ui, button;
     private float shipHealth, shipShield;
     private Inventory inventory;
-    private boolean renderInventory, renderHud;
+    private boolean renderInventory, renderHud, debug, gameover;
 
-    public StarRuler(String title, int width, int height)
+    public Snoipa(String title, int width, int height)
     {
         super(title, width, height);
     }
@@ -31,6 +31,8 @@ public class StarRuler extends GameWindow
     @Override
     protected void initialize()
     {
+        debug = true;
+
         inventory = new Inventory();
 
         for(int i = 0; i < 50; i++)
@@ -58,6 +60,8 @@ public class StarRuler extends GameWindow
     @Override
     protected void update(long delta)
     {
+        Ship ship = (Ship) entity;
+
         for(Entity entity : entities)
         {
             if(entity.getType().equals("Star"))
@@ -66,12 +70,21 @@ public class StarRuler extends GameWindow
             }
             else if(entity.getType().equals("Ship"))
             {
-                Ship ship = (Ship) entity;
                 shipHealth = ship.getHealth();
                 shipShield = ship.getShield();
             }
         }
 
+        if(debug)
+        {
+            if(random.nextInt(1000) == 250)
+            {
+                ship.hit(2);
+                System.out.println("DEBUG: hit!");
+            }
+        }
+
+        if(ship.checkIfDead()) gameover = true;
     }
 
     @Override
@@ -85,6 +98,12 @@ public class StarRuler extends GameWindow
 
         // Rendering inventory if true
         if(!renderInventory) inventory.draw(renderHandle);
+
+        // Print our gameover if it's over ;)
+        if(gameover) {
+            renderHandle.setColor(new Color(1f, 0f, 0f, .5f));
+            renderHandle.fillRect(0, 0, 735, 745);
+        }
     }
 
     @Override
