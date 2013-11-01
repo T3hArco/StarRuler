@@ -81,18 +81,26 @@ public class Inventory
         g.setColor(new Color(1f, 0f, 0f, .5f));
         g.fillRect(470, 580, 251, 129);
 
-        for(Item item : itemList)
+        if(itemList.isEmpty())
         {
-            if(count % 4 == 0 && count != 0)
+            g.setColor(Color.WHITE);
+            g.drawString("Inventory is empty!", xOffset + 68, yOffset + 55);
+        }
+        else
+        {
+            for(Item item : itemList)
             {
-                yOffset += 60;
-                xOffset = 480;
+                if(count % 4 == 0 && count != 0)
+                {
+                    yOffset += 60;
+                    xOffset = 480;
+                }
+
+                item.draw(g, xOffset, yOffset);
+
+                xOffset += 60;
+                count++;
             }
-
-            item.draw(g, xOffset, yOffset);
-
-            xOffset += 60;
-            count++;
         }
     }
 }

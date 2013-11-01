@@ -10,6 +10,18 @@ import java.awt.*;
  */
 public class Hud extends UI
 {
+    private String consoleMessage = "";
+
+    public void setConsoleMessage(String consoleMessage)
+    {
+        this.consoleMessage = consoleMessage;
+    }
+
+    public String getConsoleMessage()
+    {
+        return consoleMessage;
+    }
+
     public void draw(Graphics2D g, double shipShield, double shipHealth, String arg3)
     {
         g.setColor(Color.WHITE);
