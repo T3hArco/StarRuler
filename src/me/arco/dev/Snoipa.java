@@ -7,6 +7,7 @@ package me.arco.dev;
  * Make code more efficient
  */
 
+import me.arco.dev.debug.DebugScreen;
 import me.arco.dev.entities.Entity;
 import me.arco.dev.entities.Star;
 import me.arco.dev.entities.ship.Ship;
@@ -16,15 +17,20 @@ import me.arco.dev.ui.Button;
 
 import java.awt.*;
 import java.io.IOException;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
+import java.math.BigInteger;
+
+import static me.arco.dev.MouseEvent.Type.*;
+
 
 public class Snoipa extends GameWindow
 {
     private String author = "Arnaud Coel";
-    private String version = "0.7.0";
+    private String version = "0.7.1";
     private String branch = "Indev";
     private String debugArgs;
 
@@ -36,7 +42,11 @@ public class Snoipa extends GameWindow
     private Hud hud;
     private float shipHealth, shipShield;
     private Inventory inventory;
-    private boolean renderInventory, renderHud, debug, gameover;
+    private DebugScreen debugScreen;
+    private boolean renderInventory, renderHud, debug, gameover, renderDebug;
+    private String[] information = new String[6];
+    private int mouseX, mouseY = mouseX = 0;
+    private String mouseAction;
 
     public Snoipa(String title, int width, int height)
     {
@@ -79,9 +89,9 @@ public class Snoipa extends GameWindow
         entities.add(entity);
 
         ui = new Hud();
-        //button = new Button("Buttontest");
+        button = new Button("Buttontest");
         uiElements.add(ui);
-        //uiElements.add(button);
+        uiElements.add(button);
 
         if(debugArgs.contains("items"))
         {
@@ -92,6 +102,8 @@ public class Snoipa extends GameWindow
         }
 
         hud = (Hud) ui;
+
+        debugScreen = new DebugScreen();
     }
 
     @Override
@@ -122,6 +134,22 @@ public class Snoipa extends GameWindow
         }
 
         if(ship.checkIfDead()) gameover = true;
+
+        if(random.nextInt(100) == 75)
+        {
+            Button testButton = (Button) button;
+            SecureRandom secureRandom = new SecureRandom();
+            testButton.setText(new BigInteger(130, secureRandom).toString(32) + "");
+            //testButton.setText("test");
+        }
+
+        information[0] = "n/i";
+        information[1] = ship.getTotalPopulation() + "";
+        information[2] = "n/i";
+        information[3] = mouseX + "";
+        information[4] = mouseY + "";
+        information[5] = mouseAction;
+
     }
 
     @Override
@@ -140,6 +168,9 @@ public class Snoipa extends GameWindow
 
         // Rendering inventory if true
         if(!renderInventory) inventory.draw(renderHandle);
+
+        // Rendering our debugging window
+        if(renderDebug) debugScreen.draw(renderHandle, information);
 
         // Print our gameover if it's over ;)
         if(gameover) {
@@ -172,6 +203,10 @@ public class Snoipa extends GameWindow
                 case KeyboardEvent.KEY_H:
                     renderHud ^= true; // more fanciness!
                     break;
+
+                case KeyboardEvent.KEY_D:
+                    renderDebug ^= true;
+                    break;
             }
         }
     }
@@ -181,10 +216,22 @@ public class Snoipa extends GameWindow
     {
         if(debugArgs.contains("mouse")) System.out.println(event);
 
-        if(event.getType() == MouseEvent.Type.CLICKED)
+        /*if(event.getType() == CLICKED)
         {
-            System.out.println("Mouse clicked @ x: " + event.getX() + " y: " + event.getY() + ".");
+            mouseX = event.getX();
+            mouseY = event.getY();
+            mouseAction = event.getType() + "";
+        }*/
+
+        switch(event.getType())
+        {
+            case CLICKED:
+                mouseX = event.getX();
+                mouseY = event.getY();
+                break;
         }
+
+        mouseAction = event.getType() + "";
     }
 
 }

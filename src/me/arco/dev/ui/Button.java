@@ -21,8 +21,8 @@ public class Button extends Hud
     public void draw(Graphics2D g, double xPos, double yPos, String arg3)
     {
         g.setColor(Color.WHITE);
-        g.drawRect((int) xPos, (int) yPos, 50, 20);
-        g.drawString(this.text, (int) xPos + 15, (int) yPos + 15);
+        g.drawRect((int) xPos, (int) yPos, (this.text.length() * 7) + 14, 20);
+        g.drawString(this.text, (int) xPos + 12, (int) yPos + 15);
     }
 
     public void setText(String text)

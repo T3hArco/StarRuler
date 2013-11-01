@@ -43,6 +43,11 @@ public class ShipElement
         humanoids.add(h);
     }
 
+    public int getHumanoidCount()
+    {
+        return humanoids.size();
+    }
+
     public String getType()
     {
         return type;

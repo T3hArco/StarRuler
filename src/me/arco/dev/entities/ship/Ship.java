@@ -108,7 +108,7 @@ public class Ship extends Entity
             {
                 tempImage = voidImage;
             }
-            else if(shipElement.getType().equals("hospital"))
+            else if(shipElement.getType().equals("hospital"))  /* TODO: find better ways to do this */
             {
                 tempImage = hospitalImage;
             }
@@ -169,6 +169,18 @@ public class Ship extends Entity
                     break;
             }
         }
+    }
+
+    public int getTotalPopulation()
+    {
+        int total = 0;
+
+        for(ShipElement shipElement : shipElements)
+        {
+            total += shipElement.getHumanoidCount();
+        }
+
+        return total;
     }
 
     @Override
