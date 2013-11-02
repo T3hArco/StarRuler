@@ -18,19 +18,44 @@ public class ShipElement
         TOP, BOTTOM, LEFT, RIGHT, TOP_RIGHT, TOP_LEFT, BOTTOM_RIGHT, BOTTOM_LEFT
     }
 
-    private String type;
+    public static enum Type
+    {
+        VOID, HANGAR, HOSPITAL, BRIDGE, ENGINE
+    }
+
+    private Type type;
     private int level;
     private Offset offset;
     private List<Humanoid> humanoids = new ArrayList<Humanoid>();
+    private List<Offset> offsetList = new ArrayList<Offset>();  // dit kan blijkbaar geen 'offsets' heten?
+    private List<Type> types = new ArrayList<Type>();
 
-    public ShipElement(String type, int level, Offset offsets)
+    public ShipElement(Type type, int level, Offset offsets)
     {
         this.type = type;
         this.level = level;
         this.offset = offsets;
     }
 
-    public ShipElement(String type, int level, Offset offsets, List<Humanoid> humanoids)
+    public ShipElement()
+    {
+        types.add(Type.BRIDGE);
+        types.add(Type.ENGINE);
+        types.add(Type.HANGAR);
+        types.add(Type.HOSPITAL);
+        types.add(Type.VOID);
+
+        offsetList.add(Offset.BOTTOM_RIGHT);
+        offsetList.add(Offset.BOTTOM);
+        offsetList.add(Offset.BOTTOM_LEFT);
+        offsetList.add(Offset.LEFT);
+        offsetList.add(Offset.RIGHT);
+        offsetList.add(Offset.TOP);
+        offsetList.add(Offset.TOP_LEFT);
+        offsetList.add(Offset.TOP_RIGHT);
+    }
+
+    public ShipElement(Type type, int level, Offset offsets, List<Humanoid> humanoids)
     {
         this.type = type;
         this.level = level;
@@ -48,9 +73,19 @@ public class ShipElement
         return humanoids.size();
     }
 
-    public String getType()
+    public Type getType()
     {
         return type;
+    }
+
+    public List<Type> getTypes()
+    {
+        return types;
+    }
+
+    public List<Offset> getOffsetList()
+    {
+        return offsetList;
     }
 
     public Offset getOffset()

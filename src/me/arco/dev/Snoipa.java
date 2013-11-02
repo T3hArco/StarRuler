@@ -24,13 +24,11 @@ import java.util.Random;
 import java.util.Scanner;
 import java.math.BigInteger;
 
-import static me.arco.dev.MouseEvent.Type.*;
-
 
 public class Snoipa extends GameWindow
 {
     private String author = "Arnaud Coel";
-    private String version = "0.7.1";
+    private String version = "0.7.6";
     private String branch = "Indev";
     private String debugArgs;
 
@@ -89,9 +87,9 @@ public class Snoipa extends GameWindow
         entities.add(entity);
 
         ui = new Hud();
-        button = new Button("Buttontest");
+        //button = new Button("Buttontest");
         uiElements.add(ui);
-        uiElements.add(button);
+        //uiElements.add(button);
 
         if(debugArgs.contains("items"))
         {
@@ -137,12 +135,30 @@ public class Snoipa extends GameWindow
 
         if(random.nextInt(100) == 75)
         {
-            Button testButton = (Button) button;
+            //Button testButton = (Button) button;
             SecureRandom secureRandom = new SecureRandom();
-            testButton.setText(new BigInteger(130, secureRandom).toString(32) + "");
+            //testButton.setText(new BigInteger(130, secureRandom).toString(32) + "");
             //testButton.setText("test");
         }
 
+        if(random.nextInt(5000) == 500)
+        {
+            if(random.nextBoolean())
+            {
+                System.out.println("[SYSTEM] An enemy has been spawned randomly!");
+                try
+                {
+                    Ship ememy = new Ship(random.nextInt(600), random.nextInt(600), 100, 100, "ememy");
+                    //entities.add(ememy); niet nu
+                }
+                catch (IOException e)
+                {
+                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                }
+            }
+        }
+
+        // start compiling debug information
         information[0] = "n/i";
         information[1] = ship.getTotalPopulation() + "";
         information[2] = "n/i";
@@ -164,7 +180,7 @@ public class Snoipa extends GameWindow
         for(Entity entity : entities) entity.draw(renderHandle);
 
         // Rendering our UI
-        if(!renderHud) for(UI ui : uiElements) ui.draw(renderHandle, shipShield, shipHealth, null);
+        if(!renderHud) for(UI ui : uiElements) ui.draw(renderHandle, shipShield, shipHealth);
 
         // Rendering inventory if true
         if(!renderInventory) inventory.draw(renderHandle);
@@ -215,13 +231,6 @@ public class Snoipa extends GameWindow
     protected void handleMouseEvent(MouseEvent event)
     {
         if(debugArgs.contains("mouse")) System.out.println(event);
-
-        /*if(event.getType() == CLICKED)
-        {
-            mouseX = event.getX();
-            mouseY = event.getY();
-            mouseAction = event.getType() + "";
-        }*/
 
         switch(event.getType())
         {

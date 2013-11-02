@@ -1,6 +1,8 @@
 package me.arco.dev.ui;
 
 import java.awt.*;
+import java.util.*;
+import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
@@ -10,5 +12,12 @@ import java.awt.*;
  */
 public abstract class UI
 {
-    public abstract void draw(Graphics2D g, double shipShield, double shipHealth, String arg3);
+    private List<Button> buttons = new ArrayList<Button>();
+
+    public void addButton(float xPos, float yPos, int height, int width)
+    {
+        // TODO: implement
+    }
+
+    public abstract void draw(Graphics2D g, double shipShield, double shipHealth);
 }

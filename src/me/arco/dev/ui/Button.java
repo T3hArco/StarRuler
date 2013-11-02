@@ -8,7 +8,7 @@ import java.awt.*;
  * Date: 20/10/13
  * Time: 9:45
  */
-public class Button extends Hud
+public class Button
 {
     private String text;
 
@@ -17,16 +17,15 @@ public class Button extends Hud
         this.text = text;
     }
 
-    @Override
-    public void draw(Graphics2D g, double xPos, double yPos, String arg3)
+    public void setText(String text)
+    {
+        this.text = text;
+    }
+
+    public void draw(Graphics2D g, double xPos, double yPos)
     {
         g.setColor(Color.WHITE);
         g.drawRect((int) xPos, (int) yPos, (this.text.length() * 7) + 14, 20);
         g.drawString(this.text, (int) xPos + 12, (int) yPos + 15);
-    }
-
-    public void setText(String text)
-    {
-        this.text = text;
     }
 }

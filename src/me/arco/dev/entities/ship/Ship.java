@@ -7,8 +7,10 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * Created with IntelliJ IDEA.
@@ -24,32 +26,25 @@ public class Ship extends Entity
     private List<ShipElement> shipElements = new ArrayList<ShipElement>();
     private boolean dead = false;
     private int elementPx = 45;
-
-    //debug
-    private String[] types = { "hangar", "void", "hospital", "" };
-
-    private BufferedImage hangarImage, voidImage, hospitalImage, tempImage;
+    private BufferedImage hangarImage, voidImage, hospitalImage, bridgeImage, engineImage, tempImage;
 
     public Ship(float x, float y, float motionX, float motionY, String type) throws IOException
     {
         super(x, y, motionX, motionY, type);
         this.motionX = 1;
+        AtomicReference<List<ShipElement.Type>> types = new AtomicReference<List<ShipElement.Type>>(new ShipElement().getTypes());
+        List<ShipElement.Offset> offsetList = new ShipElement().getOffsetList();
 
-        for(int i = 0; i < 3; i++)
+        for(int i = 0; i < 20; i++)
         {
-            shipElements.add(new ShipElement(types[random.nextInt(types.length)], 1, ShipElement.Offset.BOTTOM));
-            shipElements.add(new ShipElement(types[random.nextInt(types.length)], 1, ShipElement.Offset.TOP));
-            shipElements.add(new ShipElement(types[random.nextInt(types.length)], 1, ShipElement.Offset.LEFT));    // HOORAY FOR DEBUG!
-            shipElements.add(new ShipElement(types[random.nextInt(types.length)], 1, ShipElement.Offset.RIGHT));
-            shipElements.add(new ShipElement(types[random.nextInt(types.length)], 1, ShipElement.Offset.BOTTOM_LEFT));
-            shipElements.add(new ShipElement(types[random.nextInt(types.length)], 1, ShipElement.Offset.BOTTOM_RIGHT));
-            shipElements.add(new ShipElement(types[random.nextInt(types.length)], 1, ShipElement.Offset.TOP_LEFT));
-            shipElements.add(new ShipElement(types[random.nextInt(types.length)], 1, ShipElement.Offset.TOP_RIGHT));
+            shipElements.add(new ShipElement(types.get().get(random.nextInt(types.get().size())), 1, offsetList.get(random.nextInt(offsetList.size()))));
         }
 
         hangarImage = ImageIO.read(new File("./src/me/arco/dev/entities/ship/images/hangar.png"));
         voidImage = ImageIO.read(new File("./src/me/arco/dev/entities/ship/images/void.png"));
         hospitalImage = ImageIO.read(new File("./src/me/arco/dev/entities/ship/images/hospital.png"));
+        bridgeImage = ImageIO.read(new File("./src/me/arco/dev/entities/ship/images/bridge.png"));
+        engineImage = ImageIO.read(new File("./src/me/arco/dev/entities/ship/images/engines.png"));
     }
 
     public float getHealth()
@@ -100,70 +95,72 @@ public class Ship extends Entity
 
         for(ShipElement shipElement : shipElements)
         {
-            if(shipElement.getType().equals("hangar"))
+            switch(shipElement.getType())
             {
-                tempImage = hangarImage;
-            }
-            else if(shipElement.getType().equals("void"))
-            {
-                tempImage = voidImage;
-            }
-            else if(shipElement.getType().equals("hospital"))  /* TODO: find better ways to do this */
-            {
-                tempImage = hospitalImage;
-            }
-            else
-            {
-                tempImage = voidImage;
+                case VOID:
+                    tempImage = voidImage;
+                    break;
+
+                case HANGAR:
+                    tempImage = hangarImage;
+                    break;
+
+                case HOSPITAL:
+                    tempImage = hospitalImage;
+                    break;
+
+                case BRIDGE:
+                    tempImage = bridgeImage;
+                    break;
+
+                case ENGINE:
+                    tempImage = engineImage;
+                    break;
+
+                default:
+                    tempImage = voidImage;
+                    break;
             }
 
 
             switch(shipElement.getOffset())
             {
                 case BOTTOM:
-                    //g.drawRect((int) x, (int) y - (bottomOffset * elementPx), elementPx, elementPx);
                     g.drawImage(tempImage, (int) x, (int) y - (bottomOffset * elementPx), null);
                     bottomOffset++;
                     break;
 
                 case TOP:
-                    //g.drawRect((int) x, (int) y + (topOffset * elementPx), elementPx, elementPx);
                     g.drawImage(tempImage, (int) x, (int) y + (topOffset * elementPx), null);
                     topOffset++;
                     break;
 
                 case LEFT:
-                    //g.drawRect((int) x - (leftOffset * elementPx), (int) y, elementPx, elementPx);
                     g.drawImage(tempImage, (int) x - (leftOffset * elementPx), (int) y, null);
                     leftOffset++;
                     break;
 
                 case RIGHT:
-                    //g.drawRect((int) x + (rightOffset * elementPx), (int) y, elementPx, elementPx);
                     g.drawImage(tempImage, (int) x + (rightOffset * elementPx), (int) y, null);
                     rightOffset++;
                     break;
 
                 case TOP_LEFT:
-                    //g.drawRect((int) x - (topLeftOffset * elementPx), (int) y + (topLeftOffset * elementPx), elementPx, elementPx);
                     g.drawImage(tempImage, (int) x - (topLeftOffset * elementPx), (int) y + (topLeftOffset * elementPx), null);
                     topLeftOffset++;
                     break;
 
                 case TOP_RIGHT:
-                    //g.drawRect((int) x + (topRightOffset * elementPx), (int) y + (topRightOffset * elementPx), elementPx, elementPx);
                     g.drawImage(tempImage, (int) x + (topRightOffset * elementPx), (int) y + (topRightOffset * elementPx), null);
                     topRightOffset++;
                     break;
 
                 case BOTTOM_LEFT:
-                    //g.drawRect((int) x - (bottomLeftOffset * elementPx), (int) y - (bottomLeftOffset * elementPx), elementPx, elementPx);
                     g.drawImage(tempImage, (int) x - (bottomLeftOffset * elementPx), (int) y - (bottomLeftOffset * elementPx), null);
                     bottomLeftOffset++;
                     break;
 
                 case BOTTOM_RIGHT:
-                    //g.drawRect((int) x + (bottomRightOffset * elementPx), (int) y - (bottomRightOffset * elementPx), elementPx, elementPx);
                     g.drawImage(tempImage, (int) x + (bottomRightOffset * elementPx), (int) y - (bottomRightOffset * elementPx), null);
                     bottomRightOffset++;
                     break;
