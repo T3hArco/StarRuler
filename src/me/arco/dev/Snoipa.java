@@ -82,7 +82,7 @@ public class Snoipa extends GameWindow
         catch (IOException e)
         {
             System.err.println("ERR: Drawing ship went wrong! (missing image?)");
-        }
+        }                    //test
 
         entities.add(entity);
 

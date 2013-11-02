@@ -22,7 +22,7 @@ public class Hud extends UI
         return consoleMessage;
     }
 
-    public void draw(Graphics2D g, double shipShield, double shipHealth, String arg3)
+    public void draw(Graphics2D g, double shipShield, double shipHealth)
     {
         g.setColor(Color.WHITE);
         g.drawRect(10, 580, 250, 128);
@@ -37,7 +37,6 @@ public class Hud extends UI
         g.fillRect(65, 621, (int) shipShield, 20);
         g.setColor(Color.WHITE);
         g.drawString("Shield: ", 20, 635);
-        //g.drawString(shipShield + "", 80, 675);
 
         // Rendering our health and stuff
         g.setColor(new Color(1f, 0f, 0f, .5f));
@@ -45,7 +44,5 @@ public class Hud extends UI
         g.setColor(new Color(40, 89, 31));
         g.fillRect(65, 661, (int) shipHealth, 20);
         g.setColor(Color.WHITE);
-        g.drawString("Health: ", 20, 675);
-        //g.drawString(shipHealth + "", 80, 705);
-    }
+        g.drawString("Health: ", 20, 675);    }
 }
