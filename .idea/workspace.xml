@@ -5,18 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f56628ce-ce0a-4f73-b431-4c2bc9104277" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/images/bridge.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/images/engines.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/ui/Button.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/ui/Button.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/ShipElement.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/ShipElement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/Snoipa.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/Snoipa.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/ui/UI.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/ui/UI.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StarRuler.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1383404089013" ignored="false" />
+    <file path="/Dummy.txt" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1383404124890" ignored="false" />
     <file path="/fragment.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1383294687429" ignored="false" />
     <file path="/AwesomeGame.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380645145600" ignored="false" />
     <file path="/Runner.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380647939858" ignored="false" />
@@ -738,7 +731,11 @@
       <created>1383306154873</created>
       <updated>1383306154873</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Shifted to version 0.7.6 Indev  -&gt; recoded some debugging functionalty and started recoding buttons">
+      <created>1383404131120</created>
+      <updated>1383404131120</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -835,7 +832,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Shifted to version 0.7.1 Indev (skipped 0.7.0 a) -&gt; added additional debugging when pressing 'D' on keyboard." />
+    <option name="LAST_COMMIT_MESSAGE" value="Shifted to version 0.7.6 Indev  -&gt; recoded some debugging functionalty and started recoding buttons" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -862,6 +859,7 @@
     <MESSAGE value="You can now die." />
     <MESSAGE value="Shifted to version 0.7.0 Indev -&gt; added ship parts" />
     <MESSAGE value="Shifted to version 0.7.1 Indev (skipped 0.7.0 a) -&gt; added additional debugging when pressing 'D' on keyboard." />
+    <MESSAGE value="Shifted to version 0.7.6 Indev  -&gt; recoded some debugging functionalty and started recoding buttons" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
