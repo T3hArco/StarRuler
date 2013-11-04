@@ -19,7 +19,7 @@ public abstract class GameWindow
     private BufferedImage frameBuffer;
     private KeyboardEventManager keyboardEventManager;
     private MouseEventManager mouseEventManager;
-    private ImageIcon imageIcon = new ImageIcon("./src/me/arco/dev/icon.png");
+    private ImageIcon imageIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/icon.png")));
 
     protected int width;
     protected int height;

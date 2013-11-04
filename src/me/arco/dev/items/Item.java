@@ -3,7 +3,6 @@ package me.arco.dev.items;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
@@ -24,7 +23,7 @@ public class Item
     private String description;
     private int amount;
     private String imagePath;
-    private BufferedImage image;
+    private Image image;
     private Type type;
 
     public Item(String name, String description, int amount, String imagePath, Type type)
@@ -35,11 +34,15 @@ public class Item
         this.imagePath = imagePath;
         this.type = type;
 
-        try
+        // TODO: validate whether image exists
+
+        //try
         {
-            image = ImageIO.read(new File(imagePath));
+            //image = ImageIO.read(new File(imagePath));
+            //Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/icon.png"))
+            image = Toolkit.getDefaultToolkit().getImage(getClass().getResource(imagePath));
         }
-        catch (IOException e)
+        /*catch (IOException e)
         {
             System.err.println("ERROR: Someone tried to mount an image that doesn't exist!");
             try
@@ -50,7 +53,7 @@ public class Item
             {
                 System.err.println("ERROR: Game halted, images not loadable");
             }
-        }
+        }   */
     }
 
     public void draw(Graphics2D g, float xPos, float yPos)

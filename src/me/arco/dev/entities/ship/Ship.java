@@ -2,10 +2,7 @@ package me.arco.dev.entities.ship;
 
 import me.arco.dev.entities.Entity;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -26,7 +23,12 @@ public class Ship extends Entity
     private List<ShipElement> shipElements = new ArrayList<ShipElement>();
     private boolean dead = false;
     private int elementPx = 45;
-    private BufferedImage hangarImage, voidImage, hospitalImage, bridgeImage, engineImage, tempImage;
+    private Image hangarImage;
+    private Image voidImage;
+    private Image hospitalImage;
+    private Image bridgeImage;
+    private Image engineImage;
+    private Image tempImage;
 
     public Ship(float x, float y, float motionX, float motionY, String type) throws IOException
     {
@@ -40,11 +42,11 @@ public class Ship extends Entity
             shipElements.add(new ShipElement(types.get().get(random.nextInt(types.get().size())), 1, offsetList.get(random.nextInt(offsetList.size()))));
         }
 
-        hangarImage = ImageIO.read(new File("./src/me/arco/dev/entities/ship/images/hangar.png"));
-        voidImage = ImageIO.read(new File("./src/me/arco/dev/entities/ship/images/void.png"));
-        hospitalImage = ImageIO.read(new File("./src/me/arco/dev/entities/ship/images/hospital.png"));
-        bridgeImage = ImageIO.read(new File("./src/me/arco/dev/entities/ship/images/bridge.png"));
-        engineImage = ImageIO.read(new File("./src/me/arco/dev/entities/ship/images/engines.png"));
+        hangarImage = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/entities/ship/images/hangar.png"));
+        voidImage = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/entities/ship/images/void.png"));
+        hospitalImage = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/entities/ship/images/hospital.png"));
+        bridgeImage = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/entities/ship/images/bridge.png"));
+        engineImage = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/entities/ship/images/engines.png"));
     }
 
     public float getHealth()

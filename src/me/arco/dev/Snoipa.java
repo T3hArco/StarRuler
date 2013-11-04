@@ -28,7 +28,7 @@ import java.math.BigInteger;
 public class Snoipa extends GameWindow
 {
     private String author = "Arnaud Coel";
-    private String version = "0.7.6";
+    private String version = "0.7.8";
     private String branch = "Indev";
     private String debugArgs;
 
@@ -82,14 +82,14 @@ public class Snoipa extends GameWindow
         catch (IOException e)
         {
             System.err.println("ERR: Drawing ship went wrong! (missing image?)");
-        }                    //test
+        }
 
         entities.add(entity);
 
         ui = new Hud();
-        //button = new Button("Buttontest");
         uiElements.add(ui);
-        //uiElements.add(button);
+
+        ui.addButton("test", 100, 100, 10, 30);
 
         if(debugArgs.contains("items"))
         {
@@ -135,10 +135,10 @@ public class Snoipa extends GameWindow
 
         if(random.nextInt(100) == 75)
         {
-            //Button testButton = (Button) button;
+            /*Button testButton = (Button) button;
             SecureRandom secureRandom = new SecureRandom();
-            //testButton.setText(new BigInteger(130, secureRandom).toString(32) + "");
-            //testButton.setText("test");
+            testButton.setText(new BigInteger(130, secureRandom).toString(32) + "");
+            testButton.setText("test");*/
         }
 
         if(random.nextInt(5000) == 500)
@@ -180,7 +180,11 @@ public class Snoipa extends GameWindow
         for(Entity entity : entities) entity.draw(renderHandle);
 
         // Rendering our UI
-        if(!renderHud) for(UI ui : uiElements) ui.draw(renderHandle, shipShield, shipHealth);
+        if(!renderHud)
+        {
+            for(UI ui : uiElements) ui.draw(renderHandle, shipShield, shipHealth);
+            for(Button button : ui.getButtons()) button.draw(renderHandle);
+        }
 
         // Rendering inventory if true
         if(!renderInventory) inventory.draw(renderHandle);
@@ -223,6 +227,15 @@ public class Snoipa extends GameWindow
                 case KeyboardEvent.KEY_D:
                     renderDebug ^= true;
                     break;
+
+                case KeyboardEvent.KEY_9:
+                    SecureRandom secureRandom = new SecureRandom();
+                    ui.addButton(ui.getCurrentButtonListLength() + ": " + new BigInteger(130, secureRandom).toString(32) + "", random.nextInt(600), random.nextInt(600), 0, 0);
+                    break;
+
+                case KeyboardEvent.KEY_8:
+                    ui.clearButtons();
+                    break;
             }
         }
     }
@@ -237,6 +250,18 @@ public class Snoipa extends GameWindow
             case CLICKED:
                 mouseX = event.getX();
                 mouseY = event.getY();
+
+                System.out.println(ui.isButtonAtLocation(mouseX, mouseY));
+                System.out.println(ui.getIdList()[mouseX][mouseY] + ", x-pos: " + mouseX + ", y-pos: " + mouseY);
+
+                if(ui.isButtonAtLocation(mouseX, mouseY))
+                {
+                    Button button = ui.getButtonById(ui.getIdList()[mouseX][mouseY]);
+                    //button.click();
+                    System.out.println(button.getText());
+
+                    if(debug) hud.setConsoleMessage("[DEBUG] We've clicked something! :O");
+                }
                 break;
         }
 
