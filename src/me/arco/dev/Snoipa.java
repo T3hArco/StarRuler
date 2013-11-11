@@ -12,6 +12,7 @@ import me.arco.dev.entities.Entity;
 import me.arco.dev.entities.Star;
 import me.arco.dev.entities.ship.Ship;
 import me.arco.dev.items.Inventory;
+import me.arco.dev.items.Item;
 import me.arco.dev.ui.*;
 import me.arco.dev.ui.Button;
 
@@ -28,9 +29,9 @@ import java.math.BigInteger;
 public class Snoipa extends GameWindow
 {
     private String author = "Arnaud Coel";
-    private String version = "0.7.8";
+    private String version = "0.8.0";
     private String branch = "Indev";
-    private String debugArgs;
+    private String debugArgs = "items";
 
     private Random random = new Random();
     private List<Entity> entities = new ArrayList<Entity>();
@@ -54,7 +55,7 @@ public class Snoipa extends GameWindow
     @Override
     protected void initialize()
     {
-        debug = true;
+        debug = false;
 
         if(debug)
         {
@@ -251,18 +252,33 @@ public class Snoipa extends GameWindow
                 mouseX = event.getX();
                 mouseY = event.getY();
 
-                System.out.println(ui.isButtonAtLocation(mouseX, mouseY));
-                System.out.println(ui.getIdList()[mouseX][mouseY] + ", x-pos: " + mouseX + ", y-pos: " + mouseY);
+                if(debugArgs.contains("ui")) System.out.println(ui.isButtonAtLocation(mouseX, mouseY));
+                if(debugArgs.contains("items")) System.out.println(inventory.isItemAtLocation(mouseX, mouseY));
+                if(debugArgs.contains("mouse")) System.out.println(ui.getIdList()[mouseX][mouseY] + ", x-pos: " + mouseX + ", y-pos: " + mouseY);
 
                 if(ui.isButtonAtLocation(mouseX, mouseY))
                 {
-                    Button button = ui.getButtonById(ui.getIdList()[mouseX][mouseY]);
+                    Button button = ui.getButtonById(ui.getIdList()[mouseX][mouseY - 25]);
                     //button.click();
                     System.out.println(button.getText());
 
                     if(debug) hud.setConsoleMessage("[DEBUG] We've clicked something! :O");
                 }
+
+                if(inventory.isItemAtLocation(mouseX, mouseY))
+                {
+                    Ship ship = (Ship) entity;
+                    Item item = inventory.getItemById(inventory.getIdList()[mouseX][mouseY - 25]);
+                    System.out.println(item);
+                    System.out.println(inventory.getIdList()[mouseX][mouseY - 25]);
+
+                    if(debug) hud.setConsoleMessage("[DEBUG] We've clicked an item! :O");
+                    //item.use(ship);
+                    inventory.useItem(ship, inventory.getIdList()[mouseX][mouseY - 25]);
+                }
                 break;
+
+            //case
         }
 
         mouseAction = event.getType() + "";

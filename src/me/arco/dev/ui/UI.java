@@ -63,14 +63,13 @@ public abstract class UI
 
     public Button getButtonById(int id)
     {
-        System.out.println(id);
-
         try
         {
             return buttons.get(id);
         }
         catch(IndexOutOfBoundsException e)
         {
+            System.err.println("[ERROR] Nonexistent button caught!");
             return new Button("null", 500, 500);
         }
     }

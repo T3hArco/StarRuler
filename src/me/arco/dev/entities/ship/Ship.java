@@ -59,6 +59,54 @@ public class Ship extends Entity
         return (shield / 1000) * 187;
     }
 
+    public void addToHealth(double amount)
+    {
+        if(this.health + amount >= 1000)
+        {
+            this.health = 1000;
+        }
+        else
+        {
+            this.health += amount;
+        }
+    }
+
+    public void removeFromHealth(double amount)
+    {
+        if(this.health - amount <= 0)
+        {
+            this.health = 0;
+        }
+        else
+        {
+            this.health -= amount;
+        }
+    }
+
+    public void addToShield(double amount)
+    {
+        if(this.shield + amount >= 1000)
+        {
+            this.shield = 1000;
+        }
+        else
+        {
+            this.shield += amount;
+        }
+    }
+
+    public void removeFromShield(double amount)
+    {
+        if(this.shield - amount <= 0)
+        {
+            this.shield = 0;
+        }
+        else
+        {
+            this.shield -= amount;
+        }
+    }
+
     public void hit(double force)
     {
         if(shield <= 0)
