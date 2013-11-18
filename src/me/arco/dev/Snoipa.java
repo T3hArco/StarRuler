@@ -10,6 +10,7 @@ package me.arco.dev;
 import me.arco.dev.debug.DebugScreen;
 import me.arco.dev.entities.Entity;
 import me.arco.dev.entities.Star;
+import me.arco.dev.entities.enemy.Enemy;
 import me.arco.dev.entities.living.Humanoid;
 import me.arco.dev.entities.ship.Ship;
 import me.arco.dev.items.Inventory;
@@ -32,7 +33,7 @@ import java.util.Scanner;
 public class Snoipa extends GameWindow
 {
     private final String author = "Arnaud Coel (code!), Kamiel Klumpers (music!)";
-    private final String version = "0.9an.0";
+    private final String version = "0.9.1";
     private final String branch = "Indev";
     private String debugArgs = "items";
     private float shipHealth, shipShield;
@@ -40,6 +41,12 @@ public class Snoipa extends GameWindow
     private final String[] information = new String[6];
     private int mouseX, mouseY = mouseX = 0;
     private String mouseAction;
+    private long timeStart, timeEnd;
+    private long now;
+    private int framesCount = 0;
+    private int framesCountAvg=0;
+    private long framesTimer=0;
+
 
     private final Random random = new Random();
     private final List<Entity> entities = new ArrayList<Entity>();
@@ -146,20 +153,14 @@ public class Snoipa extends GameWindow
             if(random.nextBoolean())
             {
                 System.out.println("[SYSTEM] An enemy has been spawned randomly!");
-                try
-                {
-                    Ship ememy = new Ship(random.nextInt(600), random.nextInt(600), 100, "ememy");
-                    //entities.add(ememy); niet nu
-                }
-                catch (IOException e)
-                {
-                    e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-                }
+
+                Entity wijns = new Enemy(10, 10, 100, 100, "wijns");
+                entities.add(wijns);
             }
         }
 
         // start compiling debug information
-        information[0] = "n/i";
+        information[0] = framesCountAvg + "";
         information[1] = ship.getTotalPopulation() + "";
         information[2] = "n/i";
         information[3] = mouseX + "";
@@ -201,6 +202,15 @@ public class Snoipa extends GameWindow
         if(gameover) {
             renderHandle.setColor(new Color(1f, 0f, 0f, .5f));
             renderHandle.fillRect(0, 0, 735, 745);
+        }
+
+        now=System.currentTimeMillis();
+        framesCount++;
+        if(now-framesTimer > 1000)
+        {
+            framesTimer=now;
+            framesCountAvg=framesCount;
+            framesCount=0;
         }
     }
 
