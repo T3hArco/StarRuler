@@ -1,7 +1,6 @@
 package me.arco.dev.ui;
 
 import java.awt.*;
-import java.util.Random;
 
 /**
  * Created with IntelliJ IDEA.
@@ -12,7 +11,8 @@ import java.util.Random;
 public class Button
 {
     private String text;
-    private float xPos, yPos;
+    private final float xPos;
+    private final float yPos;
 
 
     public Button(String text, float xPos, float yPos)

@@ -1,31 +1,25 @@
 package me.arco.dev;
 
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.Toolkit;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.WindowEvent;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
 
-import javax.swing.*;
-
-public abstract class GameWindow
+abstract class GameWindow
 {
 
-    private JFrame frame;
-    private JPanel renderingPanel;
-    private BufferedImage frameBuffer;
-    private KeyboardEventManager keyboardEventManager;
-    private MouseEventManager mouseEventManager;
-    private ImageIcon imageIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/icon.png")));
+    private final JFrame frame;
+    private final JPanel renderingPanel;
+    private final BufferedImage frameBuffer;
+    private final KeyboardEventManager keyboardEventManager;
+    private final MouseEventManager mouseEventManager;
+    private final ImageIcon imageIcon = new ImageIcon(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/icon.png")));
 
-    protected int width;
-    protected int height;
+    private final int width;
+    private final int height;
     private boolean running;
 
-    public GameWindow(String title, int width, int height)
+    GameWindow(String title, int width, int height)
     {
         this.width = width;
         this.height = height;
@@ -108,13 +102,13 @@ public abstract class GameWindow
         Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(closeWindowEvent);
     }
 
-    protected void swapBuffers()
+    void swapBuffers()
     {
         Graphics g = renderingPanel.getGraphics();
         g.drawImage(frameBuffer, 0, 0, null);
     }
 
-    public void shutdown()
+    void shutdown()
     {
         running = false;
     }

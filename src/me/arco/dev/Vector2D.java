@@ -1,6 +1,6 @@
 package me.arco.dev;
 
-public class Vector2D
+class Vector2D
 {
 
     private double x;

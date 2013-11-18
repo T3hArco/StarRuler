@@ -14,10 +14,10 @@ import java.util.List;
  */
 public class Inventory
 {
-    private List<Item> itemList = new ArrayList<Item>();
+    private final List<Item> itemList = new ArrayList<Item>();
     private int listOffsetX = 480;
     private int listOffsetY = 590;
-    private int[][] idList = new int[735][745];
+    private final int[][] idList = new int[735][745];
     private int count = 0;
 
 
@@ -33,9 +33,8 @@ public class Inventory
 
     public boolean isItemAtLocation(int xPos, int yPos)
     {
-        if(idList[xPos][yPos - 25] != -1) return true;
+        return idList[xPos][yPos - 25] != -1;
 
-        return false;
     }
 
     public void addItem(int id)
@@ -122,7 +121,7 @@ public class Inventory
         }
         catch(IndexOutOfBoundsException e)
         {
-            return new Item("Nothingnull", "It'll probably kill you in your sleep ;)", 1, "/me/arco/dev/items/images/none.jpg", Item.Type.DAMAGING);
+            return new Item("Nothing", "It'll probably kill you in your sleep ;)", 1, "/me/arco/dev/items/images/none.jpg", Item.Type.DAMAGING);
         }
     }
 

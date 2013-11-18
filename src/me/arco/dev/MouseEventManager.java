@@ -10,10 +10,10 @@ import java.util.Stack;
  * Date: 13/10/13
  * Time: 10:31
  */
-public class MouseEventManager implements MouseListener, MouseMotionListener
+class MouseEventManager implements MouseListener, MouseMotionListener
 {
     private int mouseX, mouseY;
-    private Stack<MouseEvent> mouseEvents = new Stack<MouseEvent>();
+    private final Stack<MouseEvent> mouseEvents = new Stack<MouseEvent>();
 
 
     @Override

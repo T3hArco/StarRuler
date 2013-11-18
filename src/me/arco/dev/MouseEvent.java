@@ -13,8 +13,9 @@ public class MouseEvent
         CLICKED, PRESSED, RELEASED
     }
 
-    private int x, y;
-    private Type type;
+    private final int x;
+    private final int y;
+    private final Type type;
 
     public MouseEvent(int x, int y, Type type)
     {

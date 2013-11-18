@@ -6,11 +6,11 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
 
-public class KeyboardEventManager implements KeyListener
+class KeyboardEventManager implements KeyListener
 {
 
-    private Stack<KeyboardEvent> keyboardEvents;
-    private Set<Integer> keyDownStates;
+    private final Stack<KeyboardEvent> keyboardEvents;
+    private final Set<Integer> keyDownStates;
 
     public KeyboardEventManager()
     {

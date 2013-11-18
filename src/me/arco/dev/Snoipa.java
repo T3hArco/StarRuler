@@ -10,46 +10,50 @@ package me.arco.dev;
 import me.arco.dev.debug.DebugScreen;
 import me.arco.dev.entities.Entity;
 import me.arco.dev.entities.Star;
+import me.arco.dev.entities.living.Humanoid;
 import me.arco.dev.entities.ship.Ship;
 import me.arco.dev.items.Inventory;
 import me.arco.dev.items.Item;
-import me.arco.dev.ui.*;
 import me.arco.dev.ui.Button;
+import me.arco.dev.ui.Hud;
+import me.arco.dev.ui.UI;
+import me.arco.dev.sound.SoundHandler;
 
 import java.awt.*;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
-import java.math.BigInteger;
 
 
 public class Snoipa extends GameWindow
 {
-    private String author = "Arnaud Coel";
-    private String version = "0.8.0";
-    private String branch = "Indev";
+    private final String author = "Arnaud Coel (code!), Kamiel Klumpers (music!)";
+    private final String version = "0.9an.0";
+    private final String branch = "Indev";
     private String debugArgs = "items";
-
-    private Random random = new Random();
-    private List<Entity> entities = new ArrayList<Entity>();
-    private List<UI> uiElements = new ArrayList<UI>();
-    private Entity entity;
-    private UI ui, button;
-    private Hud hud;
     private float shipHealth, shipShield;
-    private Inventory inventory;
-    private DebugScreen debugScreen;
     private boolean renderInventory, renderHud, debug, gameover, renderDebug;
-    private String[] information = new String[6];
+    private final String[] information = new String[6];
     private int mouseX, mouseY = mouseX = 0;
     private String mouseAction;
 
-    public Snoipa(String title, int width, int height)
+    private final Random random = new Random();
+    private final List<Entity> entities = new ArrayList<Entity>();
+    private final List<UI> uiElements = new ArrayList<UI>();
+    private Entity entity;
+    private UI ui;
+    private Hud hud;
+    private Inventory inventory;
+    private DebugScreen debugScreen;
+    private SoundHandler soundHandler;
+
+    public Snoipa(String title, int height)
     {
-        super(title, width, height);
+        super("Snoipa", 735, 745);
     }
 
     @Override
@@ -72,13 +76,13 @@ public class Snoipa extends GameWindow
 
         for(int i = 0; i < 75; i++)
         {
-            entity = new Star(random.nextInt(650), random.nextInt(650), 100, 100, "Star");
+            entity = new Star(random.nextInt(650), random.nextInt(650), 100, "Star");
             entities.add(entity);
         }
 
         try
         {
-            entity = new Ship(350, 350, 100, 100, "Ship");
+            entity = new Ship(350, 350, 100, "Ship");
         }
         catch (IOException e)
         {
@@ -103,6 +107,9 @@ public class Snoipa extends GameWindow
         hud = (Hud) ui;
 
         debugScreen = new DebugScreen();
+
+        soundHandler = new SoundHandler();
+        soundHandler.makeSound("music/idk.wav");
     }
 
     @Override
@@ -127,20 +134,12 @@ public class Snoipa extends GameWindow
         {
             if(random.nextInt(1000) == 250)
             {
-                ship.hit(2);
+                ship.hit();
                 hud.setConsoleMessage("DEBUG: hit!");
             }
         }
 
         if(ship.checkIfDead()) gameover = true;
-
-        if(random.nextInt(100) == 75)
-        {
-            /*Button testButton = (Button) button;
-            SecureRandom secureRandom = new SecureRandom();
-            testButton.setText(new BigInteger(130, secureRandom).toString(32) + "");
-            testButton.setText("test");*/
-        }
 
         if(random.nextInt(5000) == 500)
         {
@@ -149,7 +148,7 @@ public class Snoipa extends GameWindow
                 System.out.println("[SYSTEM] An enemy has been spawned randomly!");
                 try
                 {
-                    Ship ememy = new Ship(random.nextInt(600), random.nextInt(600), 100, 100, "ememy");
+                    Ship ememy = new Ship(random.nextInt(600), random.nextInt(600), 100, "ememy");
                     //entities.add(ememy); niet nu
                 }
                 catch (IOException e)
@@ -172,6 +171,8 @@ public class Snoipa extends GameWindow
     @Override
     protected void render(Graphics2D renderHandle)
     {
+        Ship ship = (Ship) entity; // for our ship needs
+
         // Render version and stuff
         renderHandle.setColor(Color.WHITE);
         renderHandle.drawString(version + " " + branch, 5, 15);
@@ -193,6 +194,9 @@ public class Snoipa extends GameWindow
         // Rendering our debugging window
         if(renderDebug) debugScreen.draw(renderHandle, information);
 
+        // Rendering the humanoids
+        for(Humanoid humanoid : ship.getAllHumanoids()) humanoid.draw(renderHandle);
+
         // Print our gameover if it's over ;)
         if(gameover) {
             renderHandle.setColor(new Color(1f, 0f, 0f, .5f));
@@ -203,6 +207,8 @@ public class Snoipa extends GameWindow
     @Override
     protected void handleKeyboardEvent(KeyboardEvent event)
     {
+        Ship ship = (Ship) entity;
+
         if (event.getType() == KeyboardEvent.DOWN)
         {
             switch (event.getKeyCode())
@@ -217,8 +223,7 @@ public class Snoipa extends GameWindow
 
                 case KeyboardEvent.KEY_0:
                     hud.setConsoleMessage("[DEBUG] ATTACKED SELF");
-                    Ship ship = (Ship) entity;
-                    ship.hit(2);
+                    ship.hit();
                     break;
 
                 case KeyboardEvent.KEY_H:
@@ -236,6 +241,10 @@ public class Snoipa extends GameWindow
 
                 case KeyboardEvent.KEY_8:
                     ui.clearButtons();
+                    break;
+
+                case KeyboardEvent.KEY_7:
+                    ship.addHuman();
                     break;
             }
         }

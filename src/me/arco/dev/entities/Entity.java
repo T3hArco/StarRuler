@@ -13,8 +13,9 @@ import java.util.Random;
 public abstract class Entity
 {
     protected float x, y;
-    protected float motionX, motionY;
-    protected String type;
+    protected float motionX;
+    private final float motionY;
+    private final String type;
 
     protected Entity(float x, float y, float motionX, float motionY, String type)
     {

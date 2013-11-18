@@ -3,10 +3,7 @@ package me.arco.dev.items;
 
 import me.arco.dev.entities.ship.Ship;
 
-import javax.imageio.ImageIO;
 import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,12 +18,12 @@ public class Item
         HEALING, DAMAGING, REPRODUCING, UPGRADE_WEAPON, UPGRADE_SHIELD, UPGRADE_HEALTH, UPGRADE_POPULATION
     }
 
-    private String name;
-    private String description;
-    private int amount;
-    private String imagePath;
-    private Image image;
-    private Type type;
+    private final String name;
+    private final String description;
+    private final int amount;
+    private final String imagePath;
+    private final Image image;
+    private final Type type;
 
     public Item(String name, String description, int amount, String imagePath, Type type)
     {
@@ -39,21 +36,6 @@ public class Item
         // TODO: validate whether image exists
 
         image = Toolkit.getDefaultToolkit().getImage(getClass().getResource(imagePath));
-    }
-
-    public String getName()
-    {
-        return name;
-    }
-
-    public String getDescription()
-    {
-        return description;
-    }
-
-    public int getAmount()
-    {
-        return amount;
     }
 
     public Type getType()
@@ -73,12 +55,12 @@ public class Item
         switch(type)
         {
             case HEALING:
-                ship.addToHealth(250);
+                ship.addToHealth();
                 break;
 
             case DAMAGING:
-                ship.removeFromHealth(250);
-                ship.removeFromShield(100);
+                ship.removeFromHealth();
+                ship.removeFromShield();
                 break;
 
             case REPRODUCING:

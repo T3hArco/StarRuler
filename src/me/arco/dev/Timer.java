@@ -1,6 +1,6 @@
 package me.arco.dev;
 
-public class Timer
+class Timer
 {
 
     private long startTime;

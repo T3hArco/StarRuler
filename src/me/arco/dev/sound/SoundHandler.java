@@ -1,0 +1,37 @@
+package me.arco.dev.sound;
+
+import me.arco.dev.Runner;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+/**
+ * Created with IntelliJ IDEA.
+ * User: Arco
+ * Date: 18/11/13
+ * Time: 18:22
+ */
+public class SoundHandler
+{
+    public static synchronized void makeSound(final String url)
+    {
+        new Thread(new Runnable()
+        {
+            public void run()
+            {
+                try
+                {
+                    Clip clip = AudioSystem.getClip();
+                    //AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(Runner.class.getResourceAsStream(("/me/arco/dev/sound/" + url)));
+                    AudioInputStream audioInputStream = AudioSystem.getAudioInputStream((getClass().getResource("/me/arco/dev/sound/" + url)));
+                    clip.open(audioInputStream);
+                    clip.start();
+                }
+                catch(Exception e)
+                {
+                    System.err.println("[ERROR] Failed to open audio file @ /me/arco/dev/sound/" + url);
+                }
+            }
+        }).start();
+    }
+}

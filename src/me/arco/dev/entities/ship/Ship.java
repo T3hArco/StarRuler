@@ -1,6 +1,7 @@
 package me.arco.dev.entities.ship;
 
 import me.arco.dev.entities.Entity;
+import me.arco.dev.entities.living.Humanoid;
 
 import java.awt.*;
 import java.io.IOException;
@@ -18,28 +19,29 @@ import java.util.concurrent.atomic.AtomicReference;
 public class Ship extends Entity
 {
     private long timePassed = 0;
-    private Random random = new Random();
+    private final Random random = new Random();
     private float health, shield = health = 1000;
-    private List<ShipElement> shipElements = new ArrayList<ShipElement>();
+    private final List<ShipElement> shipElements = new ArrayList<ShipElement>();
+    //private List<Humanoid> humanoids = new ArrayList<Humanoid>();
     private boolean dead = false;
-    private int elementPx = 45;
-    private Image hangarImage;
-    private Image voidImage;
-    private Image hospitalImage;
-    private Image bridgeImage;
-    private Image engineImage;
+    private final int elementPx = 45;
+    private final Image hangarImage;
+    private final Image voidImage;
+    private final Image hospitalImage;
+    private final Image bridgeImage;
+    private final Image engineImage;
     private Image tempImage;
 
-    public Ship(float x, float y, float motionX, float motionY, String type) throws IOException
+    public Ship(float x, float y, float motionX, String type) throws IOException
     {
-        super(x, y, motionX, motionY, type);
+        super(x, y, (float) 100, (float) 100, type);
         this.motionX = 1;
         AtomicReference<List<ShipElement.Type>> types = new AtomicReference<List<ShipElement.Type>>(new ShipElement().getTypes());
         List<ShipElement.Offset> offsetList = new ShipElement().getOffsetList();
 
         for(int i = 0; i < 20; i++)
         {
-            shipElements.add(new ShipElement(types.get().get(random.nextInt(types.get().size())), 1, offsetList.get(random.nextInt(offsetList.size()))));
+            shipElements.add(new ShipElement(types.get().get(random.nextInt(types.get().size())), offsetList.get(random.nextInt(offsetList.size()))));
         }
 
         hangarImage = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/entities/ship/images/hangar.png"));
@@ -59,27 +61,27 @@ public class Ship extends Entity
         return (shield / 1000) * 187;
     }
 
-    public void addToHealth(double amount)
+    public void addToHealth()
     {
-        if(this.health + amount >= 1000)
+        if(this.health + (double) 250 >= 1000)
         {
             this.health = 1000;
         }
         else
         {
-            this.health += amount;
+            this.health += (double) 250;
         }
     }
 
-    public void removeFromHealth(double amount)
+    public void removeFromHealth()
     {
-        if(this.health - amount <= 0)
+        if(this.health - (double) 250 <= 0)
         {
             this.health = 0;
         }
         else
         {
-            this.health -= amount;
+            this.health -= (double) 250;
         }
     }
 
@@ -95,31 +97,31 @@ public class Ship extends Entity
         }
     }
 
-    public void removeFromShield(double amount)
+    public void removeFromShield()
     {
-        if(this.shield - amount <= 0)
+        if(this.shield - (double) 100 <= 0)
         {
             this.shield = 0;
         }
         else
         {
-            this.shield -= amount;
+            this.shield -= (double) 100;
         }
     }
 
-    public void hit(double force)
+    public void hit()
     {
         if(shield <= 0)
         {
-            health -= random.nextInt(15) * (force / 3);
+            health -= random.nextInt(15) * ((double) 2 / 3);
             shield = 0;
         }
         else
         {
-            shield -= random.nextInt(15) / (force / 2);
+            shield -= random.nextInt(15) / ((double) 2 / 2);
             if(random.nextBoolean())
             {
-                health -= random.nextInt(15) / (force / 4);
+                health -= random.nextInt(15) / ((double) 2 / 4);
             }
         }
 
@@ -133,6 +135,23 @@ public class Ship extends Entity
     public boolean checkIfDead()
     {
         return dead;
+    }
+
+    public void addHuman()
+    {
+        shipElements.get(random.nextInt(shipElements.size())).addHumanoid();
+    }
+
+    public List<Humanoid> getAllHumanoids()
+    {
+        List<Humanoid> humanoids = new ArrayList<Humanoid>();
+
+        for(ShipElement shipElement : shipElements)
+        {
+            humanoids.addAll(shipElement.getHumanoids());
+        }
+
+        return humanoids;
     }
 
     @Override

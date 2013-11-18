@@ -1,15 +1,14 @@
 package me.arco.dev.entities;
 
 import java.awt.*;
-import java.util.Random;
 
 public class Star extends Entity
 {
     private long timePassed = 0;
 
-    public Star(float x, float y, float motionX, float motionY, String type)
+    public Star(float x, float y, float motionX, String type)
     {
-        super(x, y, motionX, motionY, type);
+        super(x, y, (float) 100, (float) 100, "Star");
         this.motionX = 1;
     }
 

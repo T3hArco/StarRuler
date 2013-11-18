@@ -196,8 +196,8 @@ public class KeyboardEvent
     public static final int KEY_Y = 89;
     public static final int KEY_Z = 90;
 
-    private int keyCode;
-    private int type;
+    private final int keyCode;
+    private final int type;
 
     public KeyboardEvent(int keyCode, int type)
     {

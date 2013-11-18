@@ -1,7 +1,7 @@
 package me.arco.dev.ui;
 
 import java.awt.*;
-import java.util.*;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -12,10 +12,10 @@ import java.util.List;
  */
 public abstract class UI
 {
-    private List<Button> buttons = new ArrayList<Button>();
-    private int[][] idList = new int[735][745];
+    private final List<Button> buttons = new ArrayList<Button>();
+    private final int[][] idList = new int[735][745];
 
-    public UI()
+    UI()
     {
         for(int i = 0; i < idList.length; i++)
         {
@@ -56,9 +56,8 @@ public abstract class UI
 
     public boolean isButtonAtLocation(int xPos, int yPos)
     {
-        if(idList[xPos][yPos - 25] != -1) return true;
+        return idList[xPos][yPos - 25] != -1;
 
-        return false;
     }
 
     public Button getButtonById(int id)
