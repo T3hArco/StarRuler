@@ -1,19 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f56628ce-ce0a-4f73-b431-4c2bc9104277" name="Default" comment="Implemented sound into game (shifted to 0.9.0)">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/images/Wijns.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/images/WijnsULTIMATE.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/living/images/humanoid.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/images/wijnsinator.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/Enemy.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/ui/Hud.java" />
+    <list default="true" id="f56628ce-ce0a-4f73-b431-4c2bc9104277" name="Default" comment="Implemented some fixes (FPS) (shifted to 0.9.1)">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/images/NicpRex.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/images/NicpTri.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/images/NicpTri2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/sound/music/idk.mp3" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/Enemy.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/Enemy.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/Snoipa.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/Snoipa.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/sound/SoundHandler.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/sound/SoundHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StarRuler.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384806745550" ignored="false" />
+    <file path="/Dummy.txt" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384940595958" ignored="false" />
     <file path="/fragment.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1383294687429" ignored="false" />
     <file path="/AwesomeGame.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380645145600" ignored="false" />
     <file path="/Runner.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380647939858" ignored="false" />
@@ -25,7 +27,7 @@
     <file path="/EntityHandler.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1381772498595" ignored="false" />
     <file path="/Entity.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382874475809" ignored="false" />
     <file path="/Star.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1382874287174" ignored="false" />
-    <file path="/Ship.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384594900261" ignored="false" />
+    <file path="/Ship.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384940415778" ignored="false" />
     <file path="/KlickEvent.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1380736440876" ignored="false" />
     <file path="/ShipElement.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384799191629" ignored="false" />
     <file path="/Human.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384593728607" ignored="false" />
@@ -38,12 +40,12 @@
     <file path="/UI.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1383990567904" ignored="false" />
     <file path="/Item.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384174065630" ignored="false" />
     <file path="/Inventory.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384174280673" ignored="false" />
-    <file path="/Snoipa.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384804102936" ignored="false" />
+    <file path="/Snoipa.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384940328914" ignored="false" />
     <file path="/DebugScreen.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1383305729581" ignored="false" />
     <file path="/Humanoid.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384592884628" ignored="false" />
     <file path="/SoundEvent.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384795766464" ignored="false" />
-    <file path="/SoundHandler.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384798532090" ignored="false" />
-    <file path="/Enemy.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384804921920" ignored="false" />
+    <file path="/SoundHandler.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384933840829" ignored="false" />
+    <file path="/Enemy.java" changelist="f56628ce-ce0a-4f73-b431-4c2bc9104277" time="1384940120176" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +63,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
@@ -99,6 +100,7 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -111,19 +113,25 @@
       <file leaf-file-name="Snoipa.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Snoipa.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="41" selection-start="932" selection-end="932" vertical-scroll-proportion="0.6413044">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1534#1542#0" expanded="true" />
-              </folding>
+            <state line="36" column="40" selection-start="975" selection-end="975" vertical-scroll-proportion="0.28195488">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MouseEventManager.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/MouseEventManager.java">
+      <file leaf-file-name="KeyboardEvent.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/KeyboardEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="6" selection-start="219" selection-end="219" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Ship.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="22" selection-start="415" selection-end="415" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -132,45 +140,25 @@
       <file leaf-file-name="Enemy.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/enemy/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="18" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Vector2D.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Vector2D.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="16" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0">
+            <state line="80" column="16" selection-start="1980" selection-end="1980" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Timer.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Timer.java">
+      <file leaf-file-name="KeyboardEventManager.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/KeyboardEventManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="6" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
+            <state line="8" column="6" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Runner.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Runner.java">
+      <file leaf-file-name="SoundHandler.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/sound/SoundHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="13" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameWindow.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/GameWindow.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="19" selection-start="1050" selection-end="1052" vertical-scroll-proportion="-18.04">
+            <state line="33" column="40" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -179,25 +167,34 @@
       <file leaf-file-name="Entity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="23" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0">
+            <state line="5" column="26" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Hud.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/ui/Hud.java">
+      <file leaf-file-name="Star.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/Star.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="133" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
+            <state line="4" column="13" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Item.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/items/Item.java">
+      <file leaf-file-name="Runner.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Runner.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="86" selection-start="894" selection-end="928" vertical-scroll-proportion="0.0">
+            <state line="7" column="43" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameWindow.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/me/arco/dev/GameWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="79" column="0" selection-start="2424" selection-end="2424" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -212,6 +209,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="GitLogSettings">
     <option name="myStructureFilterPaths" />
@@ -225,21 +227,21 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/me/arco/dev/ui/UI.java" />
-        <option value="$PROJECT_DIR$/src/me/arco/dev/MouseEventManager.java" />
-        <option value="$PROJECT_DIR$/src/me/arco/dev/ui/Hud.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/entities/living/Humanoid.java" />
-        <option value="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/items/Item.java" />
         <option value="$PROJECT_DIR$/src/SoundEvent.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/items/Inventory.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/entities/living/Human.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/SoundEvent.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/SoundHandler.java" />
-        <option value="$PROJECT_DIR$/src/me/arco/dev/sound/SoundHandler.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/entities/ship/ShipElement.java" />
+        <option value="$PROJECT_DIR$/src/me/arco/dev/sound/SoundHandler.java" />
+        <option value="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship (WIN-7AGPPU3UKPT's conflicted copy 2013-11-20).java" />
+        <option value="$PROJECT_DIR$/src/me/arco/dev/Snoipa (WIN-7AGPPU3UKPT's conflicted copy 2013-11-20).java" />
+        <option value="$PROJECT_DIR$/src/me/arco/dev/KeyboardEvent.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/Enemy.java" />
+        <option value="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" />
         <option value="$PROJECT_DIR$/src/me/arco/dev/Snoipa.java" />
       </list>
     </option>
@@ -249,10 +251,9 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="-3" />
+    <option name="width" value="1686" />
+    <option name="height" value="1052" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -282,6 +283,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -351,6 +353,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ui" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StarRuler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StarRuler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sound" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StarRuler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="StarRuler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dev" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="sound" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="music" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -446,92 +496,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ship" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarRuler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarRuler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="living" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarRuler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarRuler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="living" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarRuler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarRuler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="entities" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="enemy" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -563,40 +527,17 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="images" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarRuler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="StarRuler" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dev" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="debug" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="OverrideImplement.combined" value="false" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -608,23 +549,23 @@
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="FullScreen" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="me.arco.dev" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/images" />
+      <recent name="$PROJECT_DIR$/src/me/arco/dev/sound/music" />
       <recent name="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\entities\enemy\images" />
       <recent name="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\sound\generic" />
       <recent name="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\entities\ship\images" />
-      <recent name="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev" />
-      <recent name="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\items\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\entities\enemy\images" />
@@ -674,6 +615,19 @@
       <option name="PORT" value="5005" />
       <method />
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method />
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -700,19 +654,6 @@
       <envs />
       <properties />
       <listeners />
-      <method />
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method />
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
@@ -877,7 +818,11 @@
       <created>1384800455926</created>
       <updated>1384800455926</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Implemented some fixes (FPS) (shifted to 0.9.1)">
+      <created>1384806775230</created>
+      <updated>1384806775230</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -901,36 +846,36 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1096" extended-state="6" />
+    <frame x="-3" y="0" width="1686" height="1052" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31522897" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3069307" sideWeight="0.99910396" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.30573952" sideWeight="0.99910396" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32279533" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32837406" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3212321" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3200883" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16115262" sideWeight="0.6421725" order="1" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995749" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35782748" sideWeight="0.99946266" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6379127" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15544675" sideWeight="0.6434879" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35651213" sideWeight="0.99946266" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="REST Client" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32977587" sideWeight="0.6379127" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2497332" sideWeight="0.63258785" order="5" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3289183" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3995749" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -975,7 +920,7 @@
     <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implemented sound into game (shifted to 0.9.0)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implemented some fixes (FPS) (shifted to 0.9.1)" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -1007,6 +952,7 @@
     <MESSAGE value="Update image rendering (shifted to 0.7.8)" />
     <MESSAGE value="Inventory can now be used, kinda (shifted to 0.8.0)" />
     <MESSAGE value="Implemented sound into game (shifted to 0.9.0)" />
+    <MESSAGE value="Implemented some fixes (FPS) (shifted to 0.9.1)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1016,18 +962,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/enemy/images/wijnsinator.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/ship/ShipElement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="94" column="55" selection-start="2144" selection-end="2144" vertical-scroll-proportion="1.5286416">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/arco/dev/ui/UI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="84" selection-start="703" selection-end="703" vertical-scroll-proportion="0.0">
@@ -1035,44 +969,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="134" selection-start="1590" selection-end="1699" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/sound/SoundHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="14" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#377#1139#0" expanded="true" />
-            <element signature="e#1128#1129#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/arco/dev/items/Item.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="86" selection-start="894" selection-end="928" vertical-scroll-proportion="0.0">
+        <state line="35" column="86" selection-start="840" selection-end="840" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_10/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="13" selection-start="513" selection-end="513" vertical-scroll-proportion="0.33275563">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/enemy/Enemy.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="18" selection-start="92" selection-end="92" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1083,55 +983,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Runner.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="13" selection-start="35" selection-end="35" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/GameWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="19" selection-start="1050" selection-end="1052" vertical-scroll-proportion="-18.04">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Vector2D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="101" selection-end="101" vertical-scroll-proportion="0.0">
+        <state line="7" column="16" selection-start="84" selection-end="84" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/arco/dev/ui/Hud.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="133" selection-start="399" selection-end="399" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="23" selection-start="216" selection-end="216" vertical-scroll-proportion="0.0">
+        <state line="21" column="133" selection-start="392" selection-end="392" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Timer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="6" selection-start="28" selection-end="28" vertical-scroll-proportion="0.0">
+        <state line="1" column="6" selection-start="21" selection-end="21" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/KeyboardEventManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="6" selection-start="168" selection-end="168" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Runner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="43" selection-start="137" selection-end="137" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/GameWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="79" column="0" selection-start="2424" selection-end="2424" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/Star.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="13" selection-start="64" selection-end="64" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/KeyboardEvent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/sound/SoundHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="40" selection-start="1266" selection-end="1266" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="26" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/enemy/Enemy.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="80" column="16" selection-start="1980" selection-end="1980" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="22" selection-start="415" selection-end="415" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/me/arco/dev/Snoipa.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="41" selection-start="932" selection-end="932" vertical-scroll-proportion="0.6413044">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1534#1542#0" expanded="true" />
-          </folding>
+        <state line="36" column="40" selection-start="975" selection-end="975" vertical-scroll-proportion="0.28195488">
+          <folding />
         </state>
       </provider>
     </entry>

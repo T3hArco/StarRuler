@@ -23,13 +23,15 @@ public class SoundHandler
                 {
                     Clip clip = AudioSystem.getClip();
                     //AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(Runner.class.getResourceAsStream(("/me/arco/dev/sound/" + url)));
-                    AudioInputStream audioInputStream = AudioSystem.getAudioInputStream((getClass().getResource("/me/arco/dev/sound/" + url)));
+                    //AudioInputStream audioInputStream = AudioSystem.getAudioInputStream((getClass().getResource("./me/arco/dev/sound/" + url)));
+                    AudioInputStream audioInputStream = AudioSystem.getAudioInputStream((getClass().getResource(url)));
                     clip.open(audioInputStream);
                     clip.start();
                 }
                 catch(Exception e)
                 {
-                    System.err.println("[ERROR] Failed to open audio file @ /me/arco/dev/sound/" + url);
+                    System.err.println("[ERROR] Failed to open audio file @ " + getClass().getResource(url));
+                    System.out.println(e);
                 }
             }
         }).start();

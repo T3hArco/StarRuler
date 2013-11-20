@@ -44,6 +44,16 @@ public abstract class Entity
         }
     }
 
+    public float getX()
+    {
+        return x;
+    }
+
+    public float getY()
+    {
+        return y;
+    }
+
     public String getType()
     {
         return type;

@@ -1,6 +1,7 @@
 package me.arco.dev.entities.ship;
 
 import me.arco.dev.entities.Entity;
+import me.arco.dev.entities.enemy.Enemy;
 import me.arco.dev.entities.living.Humanoid;
 
 import java.awt.*;
@@ -30,6 +31,9 @@ public class Ship extends Entity
     private final Image hospitalImage;
     private final Image bridgeImage;
     private final Image engineImage;
+    private boolean shooting;
+    private int shootCount = 0;
+    private Entity tempEnemy;
     private Image tempImage;
 
     public Ship(float x, float y, float motionX, String type) throws IOException
@@ -154,10 +158,17 @@ public class Ship extends Entity
         return humanoids;
     }
 
+    public void shoot(Enemy enemy)
+    {
+        shooting = true;
+        shootCount = 0;
+        enemy.hit();
+        tempEnemy = enemy;
+    }
+
     @Override
     public void draw(Graphics2D g)
     {
-        //g.setColor(new Color(23, 60, 128));
         g.fillRect((int) x, (int) y, elementPx, elementPx);
 
         int topOffset = 0, bottomOffset = 0, leftOffset = 0, rightOffset = 0, topLeftOffset = 0, topRightOffset = 0, bottomLeftOffset = 0, bottomRightOffset = 0;
@@ -234,6 +245,26 @@ public class Ship extends Entity
                     bottomRightOffset++;
                     break;
             }
+        }
+
+        if(shooting)
+        {
+
+            while(shootCount <= 2000)
+            {
+                g.setColor(new Color(38, 128, 0));
+                g.drawLine((int) getX() + 1, (int) getY() + 1, (int) tempEnemy.getX() + 1, (int) tempEnemy.getY() + 1);
+
+                g.setColor(new Color(49, 128, 76));
+                g.drawLine((int) getX(), (int) getY(), (int) tempEnemy.getX(), (int) tempEnemy.getY());
+
+                g.setColor(new Color(38, 128, 0));
+                g.drawLine((int) getX() - 1, (int) getY() - 1, (int) tempEnemy.getX() - 1, (int) tempEnemy.getY() - 1);
+
+                shootCount++;
+            }
+
+            shooting = false;
         }
     }
 

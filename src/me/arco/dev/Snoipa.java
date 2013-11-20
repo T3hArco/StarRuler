@@ -33,19 +33,18 @@ import java.util.Scanner;
 public class Snoipa extends GameWindow
 {
     private final String author = "Arnaud Coel (code!), Kamiel Klumpers (music!)";
-    private final String version = "0.9.1";
-    private final String branch = "Indev";
+    private final String version = "1.0.0";
+    private final String branch = "Alpha";
     private String debugArgs = "items";
     private float shipHealth, shipShield;
     private boolean renderInventory, renderHud, debug, gameover, renderDebug;
     private final String[] information = new String[6];
     private int mouseX, mouseY = mouseX = 0;
     private String mouseAction;
-    private long timeStart, timeEnd;
     private long now;
     private int framesCount = 0;
-    private int framesCountAvg=0;
-    private long framesTimer=0;
+    private int framesCountAvg = 0;
+    private long framesTimer = 0;
 
 
     private final Random random = new Random();
@@ -57,6 +56,7 @@ public class Snoipa extends GameWindow
     private Inventory inventory;
     private DebugScreen debugScreen;
     private SoundHandler soundHandler;
+    private Enemy tempEnemy;
 
     public Snoipa(String title, int height)
     {
@@ -148,13 +148,15 @@ public class Snoipa extends GameWindow
 
         if(ship.checkIfDead()) gameover = true;
 
-        if(random.nextInt(5000) == 500)
+        if(random.nextInt(10000) == 500)
         {
             if(random.nextBoolean())
             {
                 System.out.println("[SYSTEM] An enemy has been spawned randomly!");
 
-                Entity wijns = new Enemy(10, 10, 100, 100, "wijns");
+                Enemy wijns = new Enemy(367, 100, 100, 100, "Wijns");
+                wijns.setType(Enemy.Type.WIJNSINATOR);
+
                 entities.add(wijns);
             }
         }
@@ -199,7 +201,8 @@ public class Snoipa extends GameWindow
         for(Humanoid humanoid : ship.getAllHumanoids()) humanoid.draw(renderHandle);
 
         // Print our gameover if it's over ;)
-        if(gameover) {
+        if(gameover)
+        {
             renderHandle.setColor(new Color(1f, 0f, 0f, .5f));
             renderHandle.fillRect(0, 0, 735, 745);
         }
@@ -256,6 +259,15 @@ public class Snoipa extends GameWindow
                 case KeyboardEvent.KEY_7:
                     ship.addHuman();
                     break;
+
+                case KeyboardEvent.KEY_S:
+                    Enemy wijns = new Enemy(367, 100, 100, 100, "Wijns");
+                    wijns.setType(Enemy.Type.WIJNSINATOR);
+
+                    entities.add(wijns);
+                    tempEnemy = wijns;
+                    System.out.println("spawned");
+                    break;
             }
         }
     }
@@ -263,6 +275,8 @@ public class Snoipa extends GameWindow
     @Override
     protected void handleMouseEvent(MouseEvent event)
     {
+        Ship ship = (Ship) entity;
+
         if(debugArgs.contains("mouse")) System.out.println(event);
 
         switch(event.getType())
@@ -283,10 +297,8 @@ public class Snoipa extends GameWindow
 
                     if(debug) hud.setConsoleMessage("[DEBUG] We've clicked something! :O");
                 }
-
-                if(inventory.isItemAtLocation(mouseX, mouseY))
+                else if(inventory.isItemAtLocation(mouseX, mouseY))
                 {
-                    Ship ship = (Ship) entity;
                     Item item = inventory.getItemById(inventory.getIdList()[mouseX][mouseY - 25]);
                     System.out.println(item);
                     System.out.println(inventory.getIdList()[mouseX][mouseY - 25]);
@@ -295,9 +307,12 @@ public class Snoipa extends GameWindow
                     //item.use(ship);
                     inventory.useItem(ship, inventory.getIdList()[mouseX][mouseY - 25]);
                 }
+                else
+                {
+                    ship.shoot(tempEnemy);
+                }
                 break;
 
-            //case
         }
 
         mouseAction = event.getType() + "";
