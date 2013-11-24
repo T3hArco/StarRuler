@@ -38,7 +38,7 @@ public class Ship extends Entity
 
     public Ship(float x, float y, float motionX, String type) throws IOException
     {
-        super(x, y, (float) 100, (float) 100, type);
+        super(x, y, 45, 45, (float) 100, (float) 100, type);
         this.motionX = 1;
         AtomicReference<List<ShipElement.Type>> types = new AtomicReference<List<ShipElement.Type>>(new ShipElement().getTypes());
         List<ShipElement.Offset> offsetList = new ShipElement().getOffsetList();
@@ -249,7 +249,6 @@ public class Ship extends Entity
 
         if(shooting)
         {
-
             while(shootCount <= 2000)
             {
                 g.setColor(new Color(38, 128, 0));

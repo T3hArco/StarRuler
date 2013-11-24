@@ -18,6 +18,7 @@ public class Enemy extends Entity
     private int xOffset = 1000;
     private boolean dead = false;
     private Random random = new Random();
+    private int yOffset = random.nextInt(1000);
 
     public static enum Type
     {
@@ -27,9 +28,9 @@ public class Enemy extends Entity
     private Image wijnsinator, wijnsinatorangry;
     private Type types;
 
-    public Enemy(float x, float y, float motionX, float motionY, String type)
+    public Enemy(float x, float y, float width, float height, float motionX, float motionY, String type)
     {
-        super(x, y, motionX, motionY, type);
+        super(x, y, width, height, motionX, motionY, type);
         wijnsinator = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/entities/enemy/images/Wijns.png"));
         wijnsinatorangry = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/entities/enemy/images/WijnsULTIMATE.png"));
     }
@@ -65,14 +66,24 @@ public class Enemy extends Entity
     @Override
     public void draw(Graphics2D g)
     {
+        boolean reached = false;
+
+        g.setColor(Color.RED);
+        g.fillRect((int) x, (int) y - 20, 50 - xOffset, 10);
+
+        g.setColor(new Color(23, 128, 3));
+        g.fillRect((int) x, (int) y - 20, 50 - (health / 1000 * 50) - xOffset, 10);
+
         switch (types)
         {
             case WIJNSINATOR:
-                g.drawImage(wijnsinator, (int) x - xOffset, (int) y, null);
+                g.drawImage(wijnsinator, (int) x - xOffset, (int) y - yOffset, null);
 
                 if(x - xOffset <= x)
                 {
                     xOffset--;
+                    yOffset--;
+                    Math.sin(yOffset);
                 }
                 else
                 {
@@ -92,6 +103,7 @@ public class Enemy extends Entity
                 break;
 
             default:
+
             case GENERIC:
 
                 break;

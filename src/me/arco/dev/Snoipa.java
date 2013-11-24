@@ -9,6 +9,7 @@ package me.arco.dev;
 
 import me.arco.dev.debug.DebugScreen;
 import me.arco.dev.entities.Entity;
+import me.arco.dev.entities.EntityHandler;
 import me.arco.dev.entities.Star;
 import me.arco.dev.entities.enemy.Enemy;
 import me.arco.dev.entities.living.Humanoid;
@@ -50,6 +51,7 @@ public class Snoipa extends GameWindow
     private final Random random = new Random();
     private final List<Entity> entities = new ArrayList<Entity>();
     private final List<UI> uiElements = new ArrayList<UI>();
+    private EntityHandler entityHandler = new EntityHandler();
     private Entity entity;
     private UI ui;
     private Hud hud;
@@ -81,22 +83,9 @@ public class Snoipa extends GameWindow
 
         inventory = new Inventory();
 
-        for(int i = 0; i < 75; i++)
-        {
-            entity = new Star(random.nextInt(650), random.nextInt(650), 100, "Star");
-            entities.add(entity);
-        }
+        for(int i = 0; i < 75; i++) entityHandler.addEntity(random.nextInt(650), random.nextInt(650), 100, 100, "star", EntityHandler.Type.STAR);
 
-        try
-        {
-            entity = new Ship(350, 350, 100, "Ship");
-        }
-        catch (IOException e)
-        {
-            System.err.println("ERR: Drawing ship went wrong! (missing image?)");
-        }
-
-        entities.add(entity);
+        entityHandler.addEntity(350, 350, 100, 100, "ship", EntityHandler.Type.SHIP);
 
         ui = new Hud();
         uiElements.add(ui);
@@ -122,18 +111,16 @@ public class Snoipa extends GameWindow
     @Override
     protected void update(long delta)
     {
-        Ship ship = (Ship) entity;
-
-        for(Entity entity : entities)
+        for(Entity entity : entityHandler.getEntities())
         {
-            if(entity.getType().equals("Star"))
+            if(entity.getType().equals("star"))
             {
                 entity.update(1);
             }
-            else if(entity.getType().equals("Ship"))
+            else if(entity.getType().equals("ship"))
             {
-                shipHealth = ship.getHealth();
-                shipShield = ship.getShield();
+                shipHealth = entityHandler.getShip().getHealth();
+                shipShield = entityHandler.getShip().getShield();
             }
         }
 
@@ -141,12 +128,12 @@ public class Snoipa extends GameWindow
         {
             if(random.nextInt(1000) == 250)
             {
-                ship.hit();
+                entityHandler.getShip().hit();
                 hud.setConsoleMessage("DEBUG: hit!");
             }
         }
 
-        if(ship.checkIfDead()) gameover = true;
+        if(entityHandler.getShip().checkIfDead()) gameover = true;
 
         if(random.nextInt(10000) == 500)
         {
@@ -154,16 +141,13 @@ public class Snoipa extends GameWindow
             {
                 System.out.println("[SYSTEM] An enemy has been spawned randomly!");
 
-                Enemy wijns = new Enemy(367, 100, 100, 100, "Wijns");
-                wijns.setType(Enemy.Type.WIJNSINATOR);
-
-                entities.add(wijns);
+                entityHandler.addEntity(367, 100, 100, 100, "Wijns", EntityHandler.Type.ENEMY);
             }
         }
 
         // start compiling debug information
         information[0] = framesCountAvg + "";
-        information[1] = ship.getTotalPopulation() + "";
+        information[1] = entityHandler.getShip().getTotalPopulation() + "";
         information[2] = "n/i";
         information[3] = mouseX + "";
         information[4] = mouseY + "";
@@ -182,7 +166,7 @@ public class Snoipa extends GameWindow
         renderHandle.drawString(hud.getConsoleMessage() + "", 745 - hud.getConsoleMessage().length() * 8, 15);
 
         // Render all the entities
-        for(Entity entity : entities) entity.draw(renderHandle);
+        for(Entity entity : entityHandler.getEntities()) entity.draw(renderHandle);
 
         // Rendering our UI
         if(!renderHud)
@@ -198,7 +182,7 @@ public class Snoipa extends GameWindow
         if(renderDebug) debugScreen.draw(renderHandle, information);
 
         // Rendering the humanoids
-        for(Humanoid humanoid : ship.getAllHumanoids()) humanoid.draw(renderHandle);
+        for(Humanoid humanoid : entityHandler.getShip().getAllHumanoids()) humanoid.draw(renderHandle);
 
         // Print our gameover if it's over ;)
         if(gameover)
@@ -257,15 +241,11 @@ public class Snoipa extends GameWindow
                     break;
 
                 case KeyboardEvent.KEY_7:
-                    ship.addHuman();
+                    entityHandler.getShip().addHuman();
                     break;
 
                 case KeyboardEvent.KEY_S:
-                    Enemy wijns = new Enemy(367, 100, 100, 100, "Wijns");
-                    wijns.setType(Enemy.Type.WIJNSINATOR);
-
-                    entities.add(wijns);
-                    tempEnemy = wijns;
+                    entityHandler.addEntity(367, 100, 100, 100, "wijns", EntityHandler.Type.ENEMY);
                     System.out.println("spawned");
                     break;
             }
@@ -307,9 +287,10 @@ public class Snoipa extends GameWindow
                     //item.use(ship);
                     inventory.useItem(ship, inventory.getIdList()[mouseX][mouseY - 25]);
                 }
-                else
+                else if(entityHandler.isEntityAtLocation(mouseX, mouseY))
                 {
-                    ship.shoot(tempEnemy);
+                    //entityHandler.getShip().shoot(tempEnemy);
+                    System.out.println("[ENEMY HIT] " + entityHandler.isEntityAtLocation(mouseX, mouseY));
                 }
                 break;
 

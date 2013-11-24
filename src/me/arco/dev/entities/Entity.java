@@ -12,15 +12,17 @@ import java.util.Random;
 
 public abstract class Entity
 {
-    protected float x, y;
+    protected float x, y, width, height;
     protected float motionX;
     private final float motionY;
     private final String type;
 
-    protected Entity(float x, float y, float motionX, float motionY, String type)
+    protected Entity(float x, float y, float width, float height, float motionX, float motionY, String type)
     {
         this.x = x;
         this.y = y;
+        this.width = width;
+        this.height = height;
         this.motionX = motionX;
         this.motionY = motionY;
         this.type = type;
@@ -54,8 +56,28 @@ public abstract class Entity
         return y;
     }
 
+    public void setX(float x)
+    {
+        this.x = x;
+    }
+
+    public void setY(float y)
+    {
+        this.y = y;
+    }
+
     public String getType()
     {
         return type;
+    }
+
+    public float getWidth()
+    {
+        return width;
+    }
+
+    public float getHeight()
+    {
+        return height;
     }
 }

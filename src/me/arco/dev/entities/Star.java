@@ -8,7 +8,7 @@ public class Star extends Entity
 
     public Star(float x, float y, float motionX, String type)
     {
-        super(x, y, (float) 100, (float) 100, "Star");
+        super(x, y, 5, 5, (float) 100, (float) 100, "Star");
         this.motionX = 1;
     }
 

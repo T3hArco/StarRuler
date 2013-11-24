@@ -17,9 +17,9 @@ public class Humanoid extends Entity
     private final int level;
     private long timePassed = 0;
 
-    Humanoid(float x, float y, float motionX, float motionY, String type, int health, int air, int level)
+    Humanoid(float x, float y, float width, float height, float motionX, float motionY, String type, int health, int air, int level)
     {
-        super(x, y, motionX, motionY, type);
+        super(x, y, 9, 16, motionX, motionY, type);
         this.health = health;
         this.air = air;
         this.level = level;

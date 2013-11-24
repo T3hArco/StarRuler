@@ -15,7 +15,7 @@ public class Human extends Humanoid
 
     public Human(float x, float y, float motionY, int health, int air, int level)
     {
-        super(x, y, (float) 100, (float) 100, "Humanoid", health, air, 1);
+        super(x, y, 9, 16, (float) 100, (float) 100, "Humanoid", health, air, 1);
         image = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/entities/living/images/humanoid.png"));
     }
 
