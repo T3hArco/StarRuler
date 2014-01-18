@@ -2,34 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f56628ce-ce0a-4f73-b431-4c2bc9104277" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/GameApplet.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/gamestate/GamestateHandler.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/Main.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/util/MathUtils.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/util/Shapes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/me/arco/dev/ui/screen/UpgradeScreen.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="DELETED" beforePath="F:\Dropbox\school\Java\StarRuler\StarRuler\src\me\arco\dev\Runner.java" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/images/NicpTri2.png" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/images/NicpTri2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/ui/Button.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/ui/Button.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/Enemy.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/enemy/Enemy.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/Entity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/EntityHandler.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/EntityHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/GameWindow.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/GameWindow.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/living/Humanoid.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/living/Humanoid.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/items/Inventory.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/items/Inventory.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/items/Item.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/items/Item.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/Ship.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/ShipElement.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/ship/ShipElement.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/Snoipa.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/Snoipa.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/sound/SoundHandler.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/sound/SoundHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/entities/Star.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/entities/Star.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/StarRuler.iml" afterPath="$PROJECT_DIR$/StarRuler.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/ui/UI.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/ui/UI.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/me/arco/dev/Vector2D.java" afterPath="$PROJECT_DIR$/src/me/arco/dev/Vector2D.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="StarRuler.iws" />
@@ -919,7 +891,7 @@
       <workItem from="1389641273044" duration="11000" />
       <workItem from="1389813554397" duration="17000" />
       <workItem from="1389815858058" duration="864000" />
-      <workItem from="1390063870606" duration="834000" />
+      <workItem from="1390063870606" duration="852000" />
     </task>
     <task id="LOCAL-00001" summary="te">
       <created>1380651776275</created>
@@ -1017,11 +989,15 @@
       <created>1385288965522</created>
       <updated>1385288965522</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="test (shifted to 1.0.0 alpha)&#10;">
+      <created>1390065110139</created>
+      <updated>1390065110139</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26310000" />
+    <option name="totallyTimeSpent" value="26328000" />
   </component>
   <component name="TodoView" selected-index="0">
     <todo-panel id="selected-file">
@@ -1144,7 +1120,8 @@
     <MESSAGE value="Implemented some fixes (FPS) (shifted to 0.9.1)" />
     <MESSAGE value="Added enemies in the game, near standard completion (shifted to 1.0.0 alpha)" />
     <MESSAGE value="test (shifted to 1.0.0 alpha)" />
-    <option name="LAST_COMMIT_MESSAGE" value="test (shifted to 1.0.0 alpha)" />
+    <MESSAGE value="test (shifted to 1.0.0 alpha)&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="test (shifted to 1.0.0 alpha)&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
