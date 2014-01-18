@@ -1,10 +1,9 @@
 package me.arco.dev.sound;
 
-import me.arco.dev.Runner;
-
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Arco
@@ -22,13 +21,10 @@ public class SoundHandler
                 try
                 {
                     Clip clip = AudioSystem.getClip();
-                    //AudioInputStream audioInputStream = AudioSystem.getAudioInputStream(Runner.class.getResourceAsStream(("/me/arco/dev/sound/" + url)));
-                    //AudioInputStream audioInputStream = AudioSystem.getAudioInputStream((getClass().getResource("./me/arco/dev/sound/" + url)));
                     AudioInputStream audioInputStream = AudioSystem.getAudioInputStream((getClass().getResource(url)));
                     clip.open(audioInputStream);
                     clip.start();
-                }
-                catch(Exception e)
+                } catch (Exception e)
                 {
                     System.err.println("[ERROR] Failed to open audio file @ " + getClass().getResource(url));
                     System.out.println(e);

@@ -68,7 +68,6 @@ abstract class GameWindow
             }
 
 
-
             update(frameTimer.stop() % 1000);
             frameTimer.set();
 
@@ -89,8 +88,7 @@ abstract class GameWindow
                 try
                 {
                     Thread.sleep(20 - timePassed);
-                }
-                catch (InterruptedException e)
+                } catch (InterruptedException e)
                 {
                     // TODO Auto-generated catch block
                     e.printStackTrace();

@@ -16,6 +16,7 @@ public class Humanoid extends Entity
     private final int air;
     private final int level;
     private long timePassed = 0;
+    private boolean dead = false;
 
     Humanoid(float x, float y, float width, float height, float motionX, float motionY, String type, int health, int air, int level)
     {
@@ -41,5 +42,19 @@ public class Humanoid extends Entity
             motionX *= -1;
         }
         super.update(delta);
+    }
+
+    @Override
+    public boolean checkIfDead()
+    {
+        if (dead) return true;
+
+        return false;
+    }
+
+    @Override
+    public boolean shipElementAtPos(int x, int y)
+    {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }

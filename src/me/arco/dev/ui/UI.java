@@ -15,30 +15,29 @@ public abstract class UI
     private final List<Button> buttons = new ArrayList<Button>();
     private final int[][] idList = new int[735][745];
 
-    UI()
+    public UI()
     {
-        for(int i = 0; i < idList.length; i++)
+        for (int i = 0; i < idList.length; i++)
         {
-            for(int j = 0; j < idList[0].length; j++)
+            for (int j = 0; j < idList[0].length; j++)
             {
-               idList[i][j] = -1;
+                idList[i][j] = -1;
             }
         }
     }
 
-    public void addButton(String text, float xPos, float yPos, int height, int width)
+    public void addButton(String text, float xPos, float yPos, int height, int width, String assignedAction)
     {
 
         xFor:
-        for(int i = (int) yPos; i < yPos + 20; i++)
+        for (int i = (int) yPos; i < yPos + 20; i++)
         {
-            for(int j = (int) xPos; j < xPos + (text.length() * 7) + 14; j++)
+            for (int j = (int) xPos; j < xPos + (text.length() * 7) + 14; j++)
             {
                 try
                 {
                     idList[j][i] = buttons.size();
-                }
-                catch(ArrayIndexOutOfBoundsException e)
+                } catch (ArrayIndexOutOfBoundsException e)
                 {
                     System.err.println("[ERROR] Newly generated button tried to go out of bounds! Generated a bit of it."); // Dirty, but functional
                     break xFor; // Stop our for, we're not going to get anything anyways.
@@ -49,6 +48,28 @@ public abstract class UI
         buttons.add(new Button(text, xPos, yPos));
     }
 
+    public void addButton(String text, float xPos, float yPos, int height, int width, String assignedAction, boolean toggleRender)
+    {
+
+        xFor:
+        for (int i = (int) yPos; i < yPos + 20; i++)
+        {
+            for (int j = (int) xPos; j < xPos + (text.length() * 7) + 14; j++)
+            {
+                try
+                {
+                    idList[j][i] = buttons.size();
+                } catch (ArrayIndexOutOfBoundsException e)
+                {
+                    System.err.println("[ERROR] Newly generated button tried to go out of bounds! Generated a bit of it."); // Dirty, but functional
+                    break xFor; // Stop our for, we're not going to get anything anyways.
+                }
+            }
+        }
+
+        buttons.add(new Button(text, xPos, yPos, toggleRender));
+    }
+
     public int[][] getIdList()
     {
         return idList;
@@ -56,7 +77,7 @@ public abstract class UI
 
     public boolean isButtonAtLocation(int xPos, int yPos)
     {
-        return idList[xPos][yPos - 25] != -1;
+        return idList[xPos][yPos] != -1;
 
     }
 
@@ -65,8 +86,7 @@ public abstract class UI
         try
         {
             return buttons.get(id);
-        }
-        catch(IndexOutOfBoundsException e)
+        } catch (IndexOutOfBoundsException e)
         {
             System.err.println("[ERROR] Nonexistent button caught!");
             return new Button("null", 500, 500);
@@ -85,9 +105,9 @@ public abstract class UI
 
     public void clearButtons()
     {
-        for(int i = 0; i < idList.length; i++)
+        for (int i = 0; i < idList.length; i++)
         {
-            for(int j = 0; j < idList[0].length; j++)
+            for (int j = 0; j < idList[0].length; j++)
             {
                 idList[i][j] = -1;
             }

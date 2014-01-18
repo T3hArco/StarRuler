@@ -26,15 +26,13 @@ public class Ship extends Entity
     //private List<Humanoid> humanoids = new ArrayList<Humanoid>();
     private boolean dead = false;
     private final int elementPx = 45;
-    private final Image hangarImage;
-    private final Image voidImage;
-    private final Image hospitalImage;
-    private final Image bridgeImage;
-    private final Image engineImage;
+    private final Image hangarImage, voidImage, hospitalImage, bridgeImage, engineImage;
     private boolean shooting;
     private int shootCount = 0;
     private Entity tempEnemy;
     private Image tempImage;
+    private float tempx, tempy;
+    private int level = 1;
 
     public Ship(float x, float y, float motionX, String type) throws IOException
     {
@@ -43,10 +41,12 @@ public class Ship extends Entity
         AtomicReference<List<ShipElement.Type>> types = new AtomicReference<List<ShipElement.Type>>(new ShipElement().getTypes());
         List<ShipElement.Offset> offsetList = new ShipElement().getOffsetList();
 
-        for(int i = 0; i < 20; i++)
+        /*for(int i = 0; i < 20; i++)
         {
             shipElements.add(new ShipElement(types.get().get(random.nextInt(types.get().size())), offsetList.get(random.nextInt(offsetList.size()))));
-        }
+        }*/
+
+        shipElements.add(new ShipElement(ShipElement.Type.BRIDGE, ShipElement.Offset.TOP));
 
         hangarImage = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/entities/ship/images/hangar.png"));
         voidImage = Toolkit.getDefaultToolkit().getImage(getClass().getResource("/me/arco/dev/entities/ship/images/void.png"));
@@ -67,11 +67,10 @@ public class Ship extends Entity
 
     public void addToHealth()
     {
-        if(this.health + (double) 250 >= 1000)
+        if (this.health + (double) 250 >= 1000)
         {
             this.health = 1000;
-        }
-        else
+        } else
         {
             this.health += (double) 250;
         }
@@ -79,11 +78,10 @@ public class Ship extends Entity
 
     public void removeFromHealth()
     {
-        if(this.health - (double) 250 <= 0)
+        if (this.health - (double) 250 <= 0)
         {
             this.health = 0;
-        }
-        else
+        } else
         {
             this.health -= (double) 250;
         }
@@ -91,23 +89,26 @@ public class Ship extends Entity
 
     public void addToShield(double amount)
     {
-        if(this.shield + amount >= 1000)
+        if (this.shield + amount >= 1000)
         {
             this.shield = 1000;
-        }
-        else
+        } else
         {
             this.shield += amount;
         }
     }
 
+    public List<ShipElement> getShipElements()
+    {
+        return shipElements;
+    }
+
     public void removeFromShield()
     {
-        if(this.shield - (double) 100 <= 0)
+        if (this.shield - (double) 100 <= 0)
         {
             this.shield = 0;
-        }
-        else
+        } else
         {
             this.shield -= (double) 100;
         }
@@ -115,21 +116,20 @@ public class Ship extends Entity
 
     public void hit()
     {
-        if(shield <= 0)
+        if (shield <= 0)
         {
             health -= random.nextInt(15) * ((double) 2 / 3);
             shield = 0;
-        }
-        else
+        } else
         {
             shield -= random.nextInt(15) / ((double) 2 / 2);
-            if(random.nextBoolean())
+            if (random.nextBoolean())
             {
                 health -= random.nextInt(15) / ((double) 2 / 4);
             }
         }
 
-        if(health <= 0)
+        if (health <= 0)
         {
             dead = true;
             health = 0;
@@ -150,7 +150,7 @@ public class Ship extends Entity
     {
         List<Humanoid> humanoids = new ArrayList<Humanoid>();
 
-        for(ShipElement shipElement : shipElements)
+        for (ShipElement shipElement : shipElements)
         {
             humanoids.addAll(shipElement.getHumanoids());
         }
@@ -158,12 +158,87 @@ public class Ship extends Entity
         return humanoids;
     }
 
+    public boolean shipElementAtPos(int x, int y)
+    {
+        int[] offsets = new int[8];
+
+        for (ShipElement shipElement : shipElements)
+        {
+            // Default values
+            int shipX = 350;
+            int shipY = 350;
+
+            switch (shipElement.getOffset())
+            {
+                case TOP:
+                    shipX = shipX + (offsets[0] * 45);
+                    if (x >= shipX && x <= shipX) return true;
+
+                    offsets[0]++;
+                    break;
+
+                case BOTTOM:
+                    shipX = shipX - (offsets[1] * 45);
+                    if (x >= shipX && x <= shipX) return true;
+
+                    offsets[1]++;
+                    break;
+
+                case LEFT:
+                    shipX = shipX - (offsets[2] * 45);
+                    if (x >= shipX && x <= shipX) return true;
+
+                    offsets[2]++;
+                    break;
+
+                case RIGHT:
+                    offsets[3]++;
+                    break;
+
+                case TOP_RIGHT:
+                    offsets[4]++;
+                    break;
+
+                case TOP_LEFT:
+                    offsets[5]++;
+                    break;
+
+                case BOTTOM_RIGHT:
+                    offsets[6]++;
+                    break;
+
+                case BOTTOM_LEFT:
+                    offsets[7]++;
+                    break;
+            }
+        }
+
+        return false;
+    }
+
     public void shoot(Enemy enemy)
     {
+        tempx = enemy.getX();
+        tempy = enemy.getY();
+
         shooting = true;
         shootCount = 0;
-        enemy.hit();
+
+        enemy.hit(level);
         tempEnemy = enemy;
+    }
+
+    public void levelUp()
+    {
+        level++;
+    }
+
+    public void addNewRandomElement()
+    {
+        AtomicReference<List<ShipElement.Type>> types = new AtomicReference<List<ShipElement.Type>>(new ShipElement().getTypes());
+        List<ShipElement.Offset> offsetList = new ShipElement().getOffsetList();
+
+        shipElements.add(new ShipElement(types.get().get(random.nextInt(types.get().size())), offsetList.get(random.nextInt(offsetList.size()))));
     }
 
     @Override
@@ -171,11 +246,11 @@ public class Ship extends Entity
     {
         g.fillRect((int) x, (int) y, elementPx, elementPx);
 
-        int topOffset = 0, bottomOffset = 0, leftOffset = 0, rightOffset = 0, topLeftOffset = 0, topRightOffset = 0, bottomLeftOffset = 0, bottomRightOffset = 0;
+        int topOffset = 0, bottomOffset = 1, leftOffset = 1, rightOffset = 1, topLeftOffset = 1, topRightOffset = 1, bottomLeftOffset = 1, bottomRightOffset = 1;
 
-        for(ShipElement shipElement : shipElements)
+        for (ShipElement shipElement : shipElements)
         {
-            switch(shipElement.getType())
+            switch (shipElement.getType())
             {
                 case VOID:
                     tempImage = voidImage;
@@ -203,7 +278,7 @@ public class Ship extends Entity
             }
 
 
-            switch(shipElement.getOffset())
+            switch (shipElement.getOffset())
             {
                 case BOTTOM:
                     g.drawImage(tempImage, (int) x, (int) y - (bottomOffset * elementPx), null);
@@ -247,19 +322,12 @@ public class Ship extends Entity
             }
         }
 
-        if(shooting)
+        if (shooting)
         {
-            while(shootCount <= 2000)
+            while (shootCount <= 4500)
             {
-                g.setColor(new Color(38, 128, 0));
-                g.drawLine((int) getX() + 1, (int) getY() + 1, (int) tempEnemy.getX() + 1, (int) tempEnemy.getY() + 1);
-
                 g.setColor(new Color(49, 128, 76));
-                g.drawLine((int) getX(), (int) getY(), (int) tempEnemy.getX(), (int) tempEnemy.getY());
-
-                g.setColor(new Color(38, 128, 0));
-                g.drawLine((int) getX() - 1, (int) getY() - 1, (int) tempEnemy.getX() - 1, (int) tempEnemy.getY() - 1);
-
+                g.drawLine(350, 350, (int) tempx + random.nextInt(20), (int) tempy + random.nextInt(20));
                 shootCount++;
             }
 
@@ -271,7 +339,7 @@ public class Ship extends Entity
     {
         int total = 0;
 
-        for(ShipElement shipElement : shipElements)
+        for (ShipElement shipElement : shipElements)
         {
             total += shipElement.getHumanoidCount();
         }

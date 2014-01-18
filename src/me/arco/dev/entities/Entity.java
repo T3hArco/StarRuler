@@ -34,12 +34,11 @@ public abstract class Entity
     {
         Random random = new Random();
 
-        if(random.nextBoolean())
+        if (random.nextBoolean())
         {
             x += motionX * delta * 0.0001f;
             y += motionY * delta * 0.0001f;
-        }
-        else
+        } else
         {
             x -= motionX * delta * 0.0001f;
             y -= motionY * delta * 0.0001f;
@@ -80,4 +79,8 @@ public abstract class Entity
     {
         return height;
     }
+
+    public abstract boolean checkIfDead();
+
+    public abstract boolean shipElementAtPos(int x, int y);
 }

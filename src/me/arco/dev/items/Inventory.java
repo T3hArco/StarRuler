@@ -23,7 +23,7 @@ public class Inventory
 
     public Inventory()
     {
-        for(int i = 0; i < idList.length; i++) for(int j = 0; j < idList[0].length; j++) idList[i][j] = -1;
+        for (int i = 0; i < idList.length; i++) for (int j = 0; j < idList[0].length; j++) idList[i][j] = -1;
     }
 
     public int[][] getIdList()
@@ -43,7 +43,7 @@ public class Inventory
 
         Item item;
 
-        switch(id)
+        switch (id)
         {
             case 0:
                 item = new Item("A test!", "Well, game developers need to test too, no? :/", 64, "/me/arco/dev/items/images/trollvase.jpg", null);
@@ -70,15 +70,14 @@ public class Inventory
         itemList.add(item);
 
         xFor:
-        for(int i = listOffsetY; i < listOffsetY + 50; i++)
+        for (int i = listOffsetY; i < listOffsetY + 50; i++)
         {
-            for(int j = listOffsetX; j < listOffsetX + 50; j++)
+            for (int j = listOffsetX; j < listOffsetX + 50; j++)
             {
                 try
                 {
                     idList[j][i] = itemList.size();
-                }
-                catch(ArrayIndexOutOfBoundsException e)
+                } catch (ArrayIndexOutOfBoundsException e)
                 {
                     System.err.println("[ERROR] Went out of bounds");
                     break xFor;
@@ -86,7 +85,7 @@ public class Inventory
             }
         }
 
-        if(count % 4 == 0 && count != 0)
+        if (count % 4 == 0 && count != 0)
         {
             listOffsetY += 60;
             listOffsetX = 480;
@@ -96,9 +95,42 @@ public class Inventory
         count++;
     }
 
+    public void reformArray()
+    {
+        int count = 0;
+
+        for (Item item : itemList)
+        {
+            xFor:
+            for (int i = listOffsetY; i < listOffsetY + 50; i++)
+            {
+                for (int j = listOffsetX; j < listOffsetX + 50; j++)
+                {
+                    try
+                    {
+                        idList[j][i] = itemList.size();
+                    } catch (ArrayIndexOutOfBoundsException e)
+                    {
+                        System.err.println("[ERROR] Went out of bounds");
+                        break xFor;
+                    }
+                }
+            }
+
+            if (count % 4 == 0 && count != 0)
+            {
+                listOffsetY += 60;
+                listOffsetX = 480;
+            }
+
+            listOffsetX += 60;
+            count++;
+        }
+    }
+
     public boolean checkIfInventoryFull()
     {
-        if(itemList.size() == 8)
+        if (itemList.size() == 8)
         {
             return true;
         }
@@ -108,9 +140,17 @@ public class Inventory
 
     public void useItem(Ship ship, int id)
     {
-        Item item = itemList.get(id);
-        item.use(ship);
-        itemList.remove(id);
+        try
+        {
+            Item item = itemList.get(id);
+            item.use(ship);
+            itemList.remove(id);
+        } catch (IndexOutOfBoundsException e)
+        {
+            System.err.println("[ERROR] Went out of bounds with item.");
+        }
+
+        reformArray();
     }
 
     public Item getItemById(int id)
@@ -118,8 +158,7 @@ public class Inventory
         try
         {
             return itemList.get(id);
-        }
-        catch(IndexOutOfBoundsException e)
+        } catch (IndexOutOfBoundsException e)
         {
             return new Item("Nothing", "It'll probably kill you in your sleep ;)", 1, "/me/arco/dev/items/images/none.jpg", Item.Type.DAMAGING);
         }
@@ -136,16 +175,15 @@ public class Inventory
         g.setColor(new Color(1f, 0f, 0f, .5f));
         g.fillRect(470, 580, 251, 129);
 
-        if(itemList.isEmpty())
+        if (itemList.isEmpty())
         {
             g.setColor(Color.WHITE);
             g.drawString("Inventory is empty!", xOffset + 68, yOffset + 55);
-        }
-        else
+        } else
         {
-            for(Item item : itemList)
+            for (Item item : itemList)
             {
-                if(count % 4 == 0 && count != 0)
+                if (count % 4 == 0 && count != 0)
                 {
                     yOffset += 60;
                     xOffset = 480;

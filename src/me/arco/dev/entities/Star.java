@@ -30,4 +30,16 @@ public class Star extends Entity
         }
         super.update(delta);
     }
+
+    @Override
+    public boolean checkIfDead()
+    {
+        return false;
+    }
+
+    @Override
+    public boolean shipElementAtPos(int x, int y)
+    {
+        return false;  //To change body of implemented methods use File | Settings | File Templates.
+    }
 }

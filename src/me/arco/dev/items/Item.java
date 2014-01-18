@@ -46,13 +46,13 @@ public class Item
     public void draw(Graphics2D g, float xPos, float yPos)
     {
         g.setColor(Color.WHITE);
-        g.drawRect((int) xPos-2, (int) yPos-1, 50, 50);
+        g.drawRect((int) xPos - 2, (int) yPos - 1, 50, 50);
         g.drawImage(image, (int) xPos, (int) yPos, null);
     }
 
     public void use(Ship ship)
     {
-        switch(type)
+        switch (type)
         {
             case HEALING:
                 ship.addToHealth();

@@ -25,7 +25,9 @@ public class ShipElement
     }
 
     private Type type;
-    private int level;
+    private int level = 1;
+    private int health = 1000;
+    private int maxpop = 10;
     private Offset offset;
     private List<Humanoid> humanoids = new ArrayList<Humanoid>();
     private final List<Offset> offsetList = new ArrayList<Offset>();  // dit kan blijkbaar geen 'offsets' heten?
@@ -34,7 +36,6 @@ public class ShipElement
     public ShipElement(Type type, Offset offsets)
     {
         this.type = type;
-        this.level = 1;
         this.offset = offsets;
     }
 
@@ -99,6 +100,16 @@ public class ShipElement
         return offset;
     }
 
+    public void addToMaxPop()
+    {
+        maxpop++;
+    }
+
+    public void levelUp()
+    {
+        level++;
+    }
+
     /**
      * Adds a human at a fixed position, not what we want
      *
@@ -113,5 +124,20 @@ public class ShipElement
     public void addHumanoid(float x, float y, int health, int air)
     {
         humanoids.add(new Human(x, y, 100, health, air, 1));
+    }
+
+    public int getLevel()
+    {
+        return level;
+    }
+
+    public int getHealth()
+    {
+        return health;
+    }
+
+    public int getMaxpop()
+    {
+        return maxpop;
     }
 }
