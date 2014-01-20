@@ -88,10 +88,13 @@ public class EntityHandler
     public boolean randomEnemyShoot()
     {
         if (enemies.size() == 0) return false;
+        if (ship.getHealth() <= 0) return false;
         int enemyId = random.nextInt(enemies.size());
 
         if (enemies.get(enemyId).checkIfDead()) return false;
         enemies.get(enemyId).shoot(ship);
+
+        if (random.nextBoolean()) randomEnemyShoot();
 
         return true;
     }

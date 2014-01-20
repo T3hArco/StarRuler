@@ -1,12 +1,5 @@
 package me.arco.dev;
 
-/*
- * TODO LIST
- * Add boss called Cameltron
- * Add boss called Nicpisaur
- * Make code more efficient
- */
-
 import me.arco.dev.debug.DebugScreen;
 import me.arco.dev.entities.Entity;
 import me.arco.dev.entities.EntityHandler;
@@ -30,22 +23,20 @@ import java.util.Scanner;
 
 public class Snoipa extends GameApplet {
     private final String author = "Arnaud Coel (code!), Kamiel Klumpers (music!)";
-    private final String version = "2.0.0";
+    private final String version = "2.1.0";
     private final String branch = "";
+    private final String[] information = new String[6];
+    private final Random random = new Random();
+    private final List<UI> uiElements = new ArrayList<UI>();
     private String debugArgs = "items";
     private float shipHealth, shipShield;
     private boolean renderInventory, renderHud, debug, gameover, renderDebug, upgrades, elements, exit, doUpgrade, gamestarted, credits;
-    private final String[] information = new String[6];
     private int mouseX, mouseY = mouseX = 0;
     private String mouseAction;
     private long now;
     private int framesCount = 0;
     private int framesCountAvg = 0;
     private long framesTimer = 0;
-
-
-    private final Random random = new Random();
-    private final List<UI> uiElements = new ArrayList<UI>();
     private EntityHandler entityHandler = new EntityHandler();
     private UI ui;
     private Hud hud;
@@ -122,6 +113,7 @@ public class Snoipa extends GameApplet {
         elements = tempList.get(1).isToggled();
         tempList.get(1).disable();
         exit = tempList.get(2).isToggled(); // piss off
+        tempList.get(2).disable();
         gamestarted = tempList.get(3).isToggled(); // gamestarted boolean
         credits = tempList.get(4).isToggled();
         tempList.get(4).disable();
@@ -159,8 +151,7 @@ public class Snoipa extends GameApplet {
 
             if (random.nextInt(10000) == 500) {
                 if (random.nextBoolean()) {
-                    System.out.println("[SYSTEM] An enemy has been spawned randomly!");
-                    entityHandler.addEntity(random.nextInt(400), random.nextInt(100), 100, 100, "wijns", EntityHandler.Type.ENEMY);
+                    entityHandler.addEntity(random.nextInt(400), random.nextInt(300), 100, 100, "wijns", EntityHandler.Type.ENEMY);
                 }
             }
 
@@ -195,7 +186,7 @@ public class Snoipa extends GameApplet {
             if (upgrades || credits)
                 for (Button button : ui.getButtons()) if (button.isCanBeClosed()) button.renderOn();
 
-            if (random.nextInt(300) == 5)
+            if (random.nextInt(100) == 5)
                 if (entityHandler.randomEnemyShoot()) soundHandler.makeSound("generic/pew.wav");
             entityHandler.cleanList();
 
@@ -304,7 +295,7 @@ public class Snoipa extends GameApplet {
                     break;
 
                 case KeyboardEvent.KEY_S:
-                    entityHandler.addEntity(random.nextInt(400), random.nextInt(100), 100, 100, "wijns", EntityHandler.Type.ENEMY);
+                    entityHandler.addEntity(random.nextInt(400), random.nextInt(300), 100, 100, "wijns", EntityHandler.Type.ENEMY);
                     System.out.println("spawned");
                     break;
 
@@ -360,7 +351,7 @@ public class Snoipa extends GameApplet {
                     if (debug) hud.setConsoleMessage("[DEBUG] We've clicked an item! :O");
                     inventory.useItem(entityHandler.getShip(), inventory.getIdList()[mouseX][mouseY]);
                 } else if (entityHandler.isEntityAtLocation(mouseX, mouseY) && gamestateHandler.getGamestate().equals(GamestateHandler.GameState.INGAME)) {
-                    if(!entityHandler.getEnemyAtLocation(mouseX, mouseY).getType().equals("Nothing")) {
+                    if (!entityHandler.getEnemyAtLocation(mouseX, mouseY).getType().equals("Nothing")) {
                         entityHandler.getShip().shoot(entityHandler.getEnemyAtLocation(mouseX, mouseY));
                         System.out.println("[ENEMY HIT] " + entityHandler.isEntityAtLocation(mouseX, mouseY));
                         soundHandler.makeSound("generic/pew.wav");

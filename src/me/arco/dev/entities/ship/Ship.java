@@ -122,7 +122,7 @@ public class Ship extends Entity
             shield = 0;
         } else
         {
-            shield -= random.nextInt(15) / ((double) 2 / 2);
+            shield -= random.nextInt(15) / ((double) 2 / 2) * 0.5;
             if (random.nextBoolean())
             {
                 health -= random.nextInt(15) / ((double) 2 / 4);

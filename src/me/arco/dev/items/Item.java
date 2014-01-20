@@ -72,11 +72,11 @@ public class Item
                 break;
 
             case UPGRADE_SHIELD:
-
+                ship.addToShield(150);
                 break;
 
             case UPGRADE_HEALTH:
-
+                ship.addToHealth();
                 break;
 
             case UPGRADE_POPULATION:
